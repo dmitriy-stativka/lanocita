@@ -1,0 +1,96 @@
+/**
+ * WooCommerce: Notification boxes (coupons, notices etc)
+ */
+
+.woocommerce {
+  --wc-notification-box-margin-b: 2.5rem;
+  --wc-notification-box-padding-lr: 3rem;
+  --wc-notification-box-padding-tb: 2rem;
+
+  @include media('>tablet') {
+    --wc-notification-box-margin-b: 3rem;
+    --wc-notification-box-padding-lr: 4rem;
+    --wc-notification-box-padding-tb: 2.5rem;
+  }
+
+  @include media('>desktop') {
+    --wc-notification-box-margin-b: 4rem;
+    --wc-notification-box-padding-lr: 4rem;
+    --wc-notification-box-padding-tb: 2rem;
+  }
+}
+
+// Notices box
+.woocommerce-notices-wrapper > * {
+  align-items: center;
+  background: white;
+  border: 1px solid var(--secondary-color2);
+  border-radius: 5px;
+  display: flex;
+  margin-bottom: var(--wc-notification-box-margin-b);
+  padding: var(--wc-notification-box-padding-tb) var(--wc-notification-box-padding-lr);
+}
+
+// Error box
+.woocommerce-error li {
+  margin-bottom: .5rem;
+  text-align: left;
+  width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-noreviews,
+p.no-comments {
+  align-items: center;
+  background: white;
+  border: 1px solid var(--wc-color-notice);
+  border-radius: 5px;
+  color: var(--primary-text-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: var(--wc-notification-box-margin-b);
+  padding: var(--wc-notification-box-padding-tb) var(--wc-notification-box-padding-lr);
+  text-align: center;
+  @include media('>tablet') {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .button {
+    order: 1;
+    text-decoration: none;
+    @include media('>tablet') {
+      margin-left: auto;
+    }
+  }
+
+  //strong {
+  //  margin-right: 5px;
+  //}
+}
+
+.woocommerce-info {
+  border-color: var(--wc-color-success);
+}
+
+.woocommerce-error {
+  border-color: var(--wc-color-error);
+}
+
+.woocommerce-notice--success {
+  ~ .c-btn {
+    margin-left: 20px;
+  }
+}

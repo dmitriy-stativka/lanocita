@@ -1,0 +1,34 @@
+/**** WooCommerce */
+/**
+ * WooCommerce CSS for usage on non Woo pages:
+ * Includes:
+ * 1. Mini Cart CSS
+ * 2. Cart overlay
+ * 3. Support floating Widget
+ *
+ * Set flag to 'ON' if site is component
+ */
+
+@import '../__core/core-mixins';
+@import "../_components/buttons";
+
+// WooCommerce Help Widget
+$--wc-shop__heed-help: ON;
+
+// WooCommerce Mini Cart Settings
+$--wc-cart-temp-sidebar: ON;
+$--wc-cart-related: ON;
+$--wc-cart-header: ON;
+$--wc-cart-shipping: ON;
+$--wc-cart-bubble: ON;
+$--wc-components__badges: ON;
+
+@import '../woocommerce/core/mixins'; // Woocommerce: Mixins
+@import '../woocommerce/core/tweaks'; // Core: Small tweaks
+@import "../woocommerce/layout/mini-cart"; // Woocommerce: Mini Cart
+@import '../woocommerce/components/c-product-loop'; // Component: Product loop
+@import '../woocommerce/components/c-quantity-input'; // Woocommerce: Quantity
+@import '../woocommerce/components/c-overlays'; // Woocommerce: Overlays
+@import '../woocommerce/components/c-badges'; // Component: Product badges
+@import "../woocommerce/widgets/w-need-help"; // Woocommerce: Need help widget
+

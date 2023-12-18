@@ -1,0 +1,13 @@
+.site-header{
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 30px 40px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,143 @@
+.l-dcbl {
+
+    .c-block {
+        background-color: var(--c-txt-bg);
+
+        &__inner {
+            width: 100%;
+        }
+
+        @include media('<=tablet') {
+            padding: var(--c-block-gm) 0;
+            .c-image {
+                @include aspect-ratio(2, 1);
+            }
+            .c-image__primary {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        @include media('>tablet') {
+            padding: var(--c-block-gt) var(--c-block-gr) var(--c-block-gb) var(--c-block-gl);
+            display: flex;
+
+            &.order-default {
+                .c-block__text {
+                    .container-fluid & {
+                        justify-content: flex-end;
+                    }
+                }
+                &.is-vertical {
+                    flex-direction: column;
+                }
+            }
+
+            &.order-reverse {
+                flex-direction: row-reverse;
+
+                &.is-vertical {
+                    flex-direction: column-reverse;
+                }
+
+                .c-block__text {
+                    .container-fluid & {
+                        justify-content: flex-start;
+                    }
+                }
+            }
+
+            &.is-vertical {
+                .c-block__media {
+                    display: flex;
+                    justify-content: center;
+                    .c-embed, iframe, video {
+                        width: 100%;
+                    }
+                }
+                .c-image {
+                    max-width: var(--columns-ratio);
+                }
+            }
+        }
+
+        .c-embed {
+            max-height: 100%;
+            iframe {
+                @include media('<=desktop') {
+                    max-height: 200px;
+                }
+            }
+        }
+    }
+
+    // Text Part Settings
+
+    .c-block__text {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media('<=desktop') {
+            padding: var(--c-txt-gm, 20px) 0;
+        }
+        @include media('>desktop') {
+            padding: var(--c-txt-gt, 30px) var(--c-txt-gr, 30px) var(--c-txt-gb, 30px) var(--c-txt-gl, 30px);
+        }
+
+
+        &.align-top {
+            align-items: flex-start;
+        }
+
+        &.align-center {
+            align-items: center;
+        }
+
+        &.align-bottom {
+            align-items: flex-end;
+        }
+    }
+
+    .c-block__media {
+        @include media(">tablet") {
+            flex: 0 0 var(--columns-ratio);
+            max-width: var(--columns-ratio);
+        }
+    }
+
+    // Images Component Settings
+
+    .c-block__icon {
+        margin-bottom: 1em;
+        max-width: 200px;
+    }
+
+    .c-list {
+        &__items {
+            list-style: none;
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding-block: 1em;
+        }
+
+        &__label {
+            font-weight: 500;
+        }
+
+        &__icon {
+            flex: 0 0 var(--list-icon-size);
+            max-width: var(--list-icon-size);
+            margin-right: 20px;
+            object-fit: contain;
+        }
+    }
+
+}
+

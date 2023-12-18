@@ -1,0 +1,43 @@
+/* Settings */
+:root {
+    --base-transition: .3s; // default transition for hovers
+    --l-block-gap-vertical: 15px;
+    --l-block-gap-horizontal: 15px;
+    --block-title-size: #{'clamp(var(--h4-font-size-mobile), var(--h-clamp-formula), var(--h4-font-size))'};
+    --block-title-weight: var(--h4-font-weight);
+    --block-title-transform: var(--h4-text-transform);
+    --block-title-font: var(--h4-font);
+    --block-title-height: var(--h4-line-height);
+    --block-title-ls: var(--h4-letter-spacing);
+    --block-title-color: var(--titles-color);
+    --block-text-size: var(--base-text-size);
+    --block-title-margin: .5em;
+    --с-block-padding: 15px;
+    --c-block-align: left;
+}
+
+/* WYSIWYG */
+.is-wysiwyg {
+    --wysiwyg-margin: 1.5em;
+    --wysiwyg-li-padding: 0 0 0 30px;
+    --wysiwyg-li-bgp: 0 .4em;
+    --wysiwyg-li-margin: 1em;
+    --wysiwyg-li-fallback: '\2022';
+}
+
+/* Social Icons */
+.social-list {
+    --social-icon-color: var(--primary-color3);
+    --social-icon-color-hover: var(--primary-color2);
+    --social-icon-bg: var(--primary-color2);
+    --social-icon-bg-hover: var(--primary-color3);
+    --social-icon-radius: 50%;
+    --social-icon-size: 38px;
+    --social-icon-inner: 55%;
+}
+
+/* Images */
+.c-image {
+    --front-src-shift: 30px; // Secondary decorative image offset
+}
+

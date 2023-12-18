@@ -1,0 +1,14 @@
+/**
+ ############################
+ #   MODULE: Accordions
+ ############################
+ */
+
+@import '../__core/core-mixins';
+
+@import "accordion/_acc-layout";
+@import "accordion/_acc-core";
+
+@import "accordion/visuals/animate";
+
+@import "../project-custom/modules/custom__accordions";

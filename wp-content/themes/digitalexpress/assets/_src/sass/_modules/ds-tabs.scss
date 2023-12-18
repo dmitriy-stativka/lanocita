@@ -1,0 +1,16 @@
+/**
+ ############################
+ #   MODULE: TABS
+ ############################
+ */
+
+@import '../__core/core-mixins';
+
+@import "tabs/_tbnav-core";
+
+@import "tabs/_tbpanel-core";
+
+@import "tabs/visuals/animate";
+
+@import "../project-custom/modules/custom__tabs";
+

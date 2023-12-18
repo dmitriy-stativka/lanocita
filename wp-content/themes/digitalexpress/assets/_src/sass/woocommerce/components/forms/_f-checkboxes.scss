@@ -1,0 +1,103 @@
+/**
+ * Woocommerce: Form Checkboxes
+ */
+
+.woocommerce {
+  --wc-form-checkbox-size: 20px;
+  --wc-form-checkbox-radius: 4px;
+  --wc-form-checkbox-bgd: var(--input-background-color);
+  // Instead of exporting base64 svg code, you can just set stroke color from 'currentColor' to desired one
+  --wc-form-checkbox-bgd-checked: url("data:image/svg+xml,%3Csvg width='14' height='11' viewBox='0 0 14 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.5L5.5 10L13 1' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+
+// Default system checkboxes
+.woocommerce {
+  input[type='checkbox'] {
+    height: var(--wc-form-checkbox-size);
+    width: var(--wc-form-checkbox-size);
+    border-radius: var(--wc-form-checkbox-radius);
+    background: var(--wc-form-checkbox-bgd);
+    accent-color: var(--wc-form-checkbox-bgd);
+    border: var(--input-border-width, 1px) solid var(--input-border-color, #666);
+    appearance: none;
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+
+    &:checked {
+      background-image: var(--wc-form-checkbox-bgd-checked);
+    }
+  }
+}
+
+// Checkboxes: Wrapper
+.wc-checkbox-wrapper {
+  position: relative;
+}
+
+.wc-checkbox-input {
+  position: absolute;
+  visibility: hidden !important;
+  width: var(--wc-form-checkbox-size);
+  height: var(--wc-form-checkbox-size);
+  left: -9999px;
+}
+
+.wc-checkbox-label {
+  user-select: none;
+  cursor: pointer;
+}
+
+// Checkboxes: Label styling
+.wc-checkbox-label {
+  &::before {
+    content: '';
+    display: inline-block;
+    height: var(--wc-form-checkbox-size);
+    width: var(--wc-form-checkbox-size);
+    border-radius: var(--wc-form-checkbox-radius, 5px);
+    border: var(--input-border-width, 1px) solid var(--input-border-color, #666);
+    background-color: var(--input-background-color, #fff);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: none;
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+  }
+}
+
+// Checkboxes: Checked state
+.wc-checkbox-label-checked {
+  &::before {
+    background-image: var(--wc-form-checkbox-bgd-checked);
+  }
+}
+
+// Checkboxes: Fake checkbox mixin
+@mixin input-fake-checkbox {
+  @extend .wc-checkbox-input;
+
+  & + span,
+  & + label {
+    @extend .wc-checkbox-label;
+  }
+
+  &:checked {
+    & + span,
+    & + label {
+      @extend .wc-checkbox-label-checked;
+    }
+  }
+}
+
+// Where to change: Checkboxes
+input.woocommerce-form__input-checkbox,
+input[name='wp-comment-cookies-consent'] {
+  @include input-fake-checkbox;
+}
+
+.woocommerce-form__label-for-checkbox {
+  @extend .wc-checkbox-wrapper;
+}

@@ -1,0 +1,18 @@
+/**
+ ############################
+ #   MODULE: CONTENT BLOCKS
+ ############################
+ */
+
+@import "content-blocks/_module";
+
+@import "content-blocks/_layouts";
+
+@import "content-blocks/_blocks";
+
+// Decorative layer: includes animations, custom bgs, etc
+
+@import "content-blocks/visuals/decorate";
+
+@import "content-blocks/visuals/animate/aos";
+@import "content-blocks/visuals/animate/a-rcbl";

@@ -1,0 +1,45 @@
+/* Counters */
+
+.m-counter {
+	--l-block-col: 3;
+	--l-block-gap: 20px;
+	--l-block-gap-vertical: 20px;
+	--l-block-gap-horizontal: 20px;
+
+	--c-block-gap-vertical: 15px;
+	--c-block-gap-horizontal: 15px;
+
+	--counter-num-size: 5rem;
+	--counter-num-weight: 700;
+	--counter-num-lh: 1;
+	--counter-font-size: 1.6rem;
+	--counter-font-weight: 500;
+	--counter-symbol-size: var(--counter-num-size);
+	--counter-title-size: 2.2rem;
+	--counter-title-weight: 700;
+}
+
+.c-counter {
+
+	&__body {
+
+	}
+	&__media {
+
+	}
+	&__img {
+
+	}
+	&__num {
+
+	}
+	&__symbol {
+
+	}
+	&__title {
+
+	}
+	&__description {
+
+	}
+}

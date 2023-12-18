@@ -1,0 +1,20 @@
+/**** WooCommerce */
+/**
+ * WooCommerce Critical CSS:
+ * Includes:
+ * 1. Store notice CSS
+ * 2. Mobile header icon shuffle
+ * 3. Woocommerce related header icons
+ *
+ * Set flag to 'ON' if site is component
+ */
+
+$--wc-components__store-notice: ON;
+
+@import 'assets/_src/sass/__core/core-mixins';
+@import "assets/_src/sass/woocommerce/components/c-store-notice";
+@import "assets/_src/sass/woocommerce/layout/header-mobile";
+@import "assets/_src/sass/_layout/header/blocks/account";
+
+// Content offset if store notice is present
+

@@ -1,0 +1,15 @@
+/**
+ * Woocommerce: Description Tab
+ *
+ */
+@if $--wc-components__tabs-specification == ON {
+  .woocommerce-Tabs-panel--additional_information {
+    --tab-col-1: 55%;
+    --tab-col-2: 45%;
+    --tab-col-gap: 10px;
+
+    h2 {
+     @extend .wc-h2-title;
+    }
+  }
+}

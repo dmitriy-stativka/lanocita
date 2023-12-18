@@ -1,0 +1,77 @@
+/**
+ * Woocommerce: Account details and addresses forms
+ */
+
+form.woocommerce-EditAccountForm {
+  fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--wc-acc-form-gap-v);
+    margin-bottom: var(--wc-acc-form-gap-v);
+  }
+
+  legend {
+    @extend .wc-account-subtitle;
+    margin-bottom: var(--wc-acc-title-mb);
+
+    @include media("<=desktop-m") {
+      margin: 0 0 0.5em 0;
+    }
+  }
+}
+
+form.woocommerce-EditAccountForm,
+.woocommerce-address-fields__field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  .clear {
+    width: 100%;
+  }
+}
+
+form.woocommerce-EditAccountForm,
+.woocommerce-address-fields {
+  .form-row {
+    flex: 0 0 100%;
+    width: 100%;
+    margin-bottom: var(--wc-acc-form-gap-v);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include media('>tablet') {
+      flex: 0 0 calc(50% - calc(var(--wc-acc-form-gap-h) / 2));
+      width: calc(50% - calc(var(--wc-acc-form-gap-h) / 2));
+      margin-bottom: var(--wc-acc-form-gap-v);
+
+      &-first, &:nth-child(odd), &:first-of-type {
+        margin-right: calc(var(--wc-acc-form-gap-h) / 2);
+      }
+
+      &-last, &:nth-child(even) {
+        margin-left: calc(var(--wc-acc-form-gap-h) / 2);
+      }
+    }
+  }
+
+  //.form-row-wide {
+  //  flex: 0 0 100%;
+  //  width: 100%;
+  //}
+}
+
+form.woocommerce-EditAccountForm {
+  .form-row {
+    &.form-row-wide {
+      flex: 0 0 100%;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.woocommerce-address-fields__field-wrapper {
+  margin-bottom: calc(var(--wc-acc-form-gap-v) * 2);
+}

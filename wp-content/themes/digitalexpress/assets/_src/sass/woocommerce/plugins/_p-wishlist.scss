@@ -1,0 +1,121 @@
+/**
+ * WooCommerce: Plugin Wishlist
+ */
+
+@if $--wc-plugins__wishlist == ON {
+  .woocommerce {
+    --wc-wishlist-size: 50px;
+    --wc-wishlist-icon-size: 30px;
+    --wc-wishlist-color: var(--primary-color1);
+    --wc-wishlist-color-active: var(--primary-color2);
+  }
+
+  .tinv-header {
+    display: none;
+  }
+
+  .tinv-wishlist {
+    .tinvwl_add_to_wishlist_button {
+      display: flex;
+      align-items: center;
+      transition: color .3s ease;
+      color: var(--primary-text-color);
+
+      &.tinvwl-icon-heart {
+        &::before {
+          font-size: var(--wc-wishlist-icon-size);
+        }
+
+        &.no-txt {
+          width: var(--wc-wishlist-size);
+          height: var(--wc-wishlist-size);
+          vertical-align: middle;
+          border: 1px solid var(--wc-wishlist-color);
+          border-radius: 500px;
+          margin: 0;
+          transition: color .3s ease, border-color .3s ease;
+
+          &:before {
+            font-size: var(--wc-wishlist-icon-size);
+            margin: 0;
+            transform: translate(-50%, -50%);
+          }
+
+          &:not(.disabled-add-wishlist) {
+            &.tinvwl-product-in-list,
+            &:hover {
+              border-color: var(--wc-wishlist-color-active);
+              color: var(--wc-wishlist-color-active);
+              transition: color .3s ease, border-color .3s ease;
+            }
+          }
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--btn-link-color-hover);
+          transition: color .3s ease;
+        }
+      }
+    }
+
+    .c-btn {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      &__txt {
+        padding-inline: 0;
+      }
+    }
+  }
+
+  // Product Loop Button Settings
+  .woocommerce-archive-content {
+    .tinvwl-loop-button-wrapper {
+      position: relative;
+
+      // Before 'add to cart' button
+      &.tinvwl-before-add-to-cart {
+        margin-bottom: 0.5em;
+      }
+
+      // Above thumbnail
+      &.tinvwl-above_thumb-add-to-cart {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: var(--primary-text-color);
+      }
+
+      // Icon only, to text after and before add to cart button
+      &.tinvwl-after-add-to-cart,
+      &.tinvwl-before-add-to-cart {
+        .tinvwl-icon-heart.no-txt {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+
+      // Icon only, after 'add to cart' button
+      &.tinvwl-after-add-to-cart .tinvwl-icon-heart.no-txt {
+        transform: translateY(-50%);
+      }
+    }
+
+    // Button
+    a.tinvwl_add_to_wishlist_button {
+      display: inline-flex;
+      align-items: center;
+      transition: opacity .3s ease;
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.7;
+          transition: opacity .3s ease;
+        }
+      }
+    }
+  }
+}

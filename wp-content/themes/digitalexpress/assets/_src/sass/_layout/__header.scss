@@ -1,0 +1,19 @@
+@import "header/header-core";
+@import "header/layouts/header_rows";
+@import "header/layouts/header_sticky";
+@import "header/layouts/header_mobile";
+@import "header/layouts/header_devices";
+
+@import "header/blocks/navbar_menu";
+@import "header/blocks/navbar_burger";
+@import "header/blocks/site_search";
+//@import "header/blocks/navbar_a11y";
+@import "header/blocks/links-list";
+
+:root {
+  --admin-bar: 32px;
+
+  @include media('<=tablet') {
+    --admin-bar: 46px;
+  }
+}

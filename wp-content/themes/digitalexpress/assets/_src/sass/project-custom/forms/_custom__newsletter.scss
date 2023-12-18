@@ -1,0 +1,140 @@
+.c-newsletter {
+	--nl-height: 45px;
+	--nl-radius: 2px;
+	--nl-title-size: 2.4rem;
+	--nl-title-weight: 700;
+	--nl-border-color: #ccc;
+
+	position: static;
+
+	@include media('<tablet') {
+		padding-block: 10px;
+		.gform_anchor {
+			position: absolute;
+			top: -100px;
+		}
+	}
+	@include media('>=tablet') {
+		width: 60%;
+	}
+
+	&__wrap {
+		background-color: var(--primary-color2);
+		padding-block: 3rem;
+		position: relative;
+
+		.footer-title {
+			margin: 0;
+		}
+	}
+
+	&__outer {
+		@include media('>=tablet') {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+		}
+	}
+
+	.gform_wrapper.gravity-theme {
+		&.gform_validation_error {
+			form {
+				@include media('>=tablet') {
+					align-items: flex-start;
+				}
+			}
+		}
+		form {
+			@include media('>=tablet') {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+
+			input[type="text"],
+			input[type="email"] {
+				padding-inline: 20px;
+				font-size: 16px;
+			}
+			input {
+				height: var(--nl-height);
+				border-radius: var(--nl-radius);
+				border: 1px solid var(--nl-border-color);
+			}
+			.gform_button {
+				padding-block: 0;
+			}
+		}
+
+		.gfield_error [aria-invalid="true"] {
+			border: none;
+			color: var(--validation-error-color);
+		}
+
+		.gform_heading {
+			display: none;
+		}
+
+		.gform_fields {
+			@include media('<tablet') {
+				grid-row-gap: 10px;
+			}
+		}
+
+		.gform_footer {
+			@include media('>=tablet') {
+				padding: 0;
+				margin: 0;
+			}
+			@include media('<tablet') {
+				text-align: center;
+				justify-content: center;
+				padding-top: 2px;
+			}
+
+			.gform_button {
+				margin: 0;
+				@include media('<tablet') {
+					width: 100%;
+				}
+			}
+		}
+
+		.gform_body {
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+		}
+
+		.gform_validation_errors {
+			display: none;
+		}
+	}
+
+	.gform_confirmation_wrapper {
+		--w-form-msg-radius: 0;
+		position: absolute;
+		inset: 0;
+		padding: 20px;
+		text-align: center;
+		background-color: var(--validation-success-color);
+		color: #fff;
+		font-size: 2rem;
+		gap: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include media('<tablet') {
+			flex-direction: column;
+		}
+		&:before {
+			margin: 0;
+		}
+		.gform_confirmation_message {
+			display: inline-block;
+			line-height: 1.2;
+			min-height: 32px;
+		}
+	}
+}

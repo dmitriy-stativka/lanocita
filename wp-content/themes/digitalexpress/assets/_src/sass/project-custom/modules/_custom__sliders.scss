@@ -1,0 +1,48 @@
+/* Swiper sliders */
+
+@import "sliders-layouts/slider-controls";
+@import "sliders-layouts/slider-navpanel";
+
+.m-slider {
+
+}
+
+.l-slider-banner-advanced {
+    --tab-bg: #fff;
+    --tab-color: var(--primary-color2);
+    --tab-bg-active: var(--primary-color1);
+    --tab-color-active: #fff;
+    --tab-border-color: #555;
+}
+
+.l-slider-double-cards {
+  --dsbls-title-size: 3rem;
+  --dsbls-title-weight: 700;
+  --dsbls-text-size: 1.8rem;
+  --dsbls-color: #fff;
+  --dsbls-overlay: var(--primary-color1);
+
+  --dsbls-height: 500px;
+
+  @include media('>desktop-m') {
+    --dsbls-height: 680px;
+  }
+  @include media('>desktop-l') {
+    --dsbls-height: 780px;
+  }
+
+}
+
+@include media('>desktop') {
+  .overflow-right {
+    .m-slider__outer {
+      margin-right: -50vw;
+      overflow: hidden;
+      padding-right: calc(50vw + 108px);
+    }
+
+    .m-slider__container {
+      overflow: visible;
+    }
+  }
+}

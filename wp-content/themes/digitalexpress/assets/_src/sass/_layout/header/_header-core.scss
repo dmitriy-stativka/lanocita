@@ -1,0 +1,117 @@
+.site-header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: transform var(--base-transition), background-color var(--base-transition), box-shadow var(--base-transition);
+    color: var(--header-link-color);
+    z-index: 99;
+
+    @include media('<=desktop') {
+        max-height: var(--navbar-height, 60px);
+        position: sticky;
+    }
+    @include media('>desktop') {
+        position: var(--header-sticky-type, sticky);
+        .admin-bar & {
+            top: 28px;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        @include media(">desktop") {
+            transition: all var(--base-transition);
+            max-width: 100%;
+            max-height: 150px;
+        }
+
+        img, svg, picture {
+            max-width: 250px;
+            max-height: 100px;
+            min-width: 60px;
+            color: currentColor;
+            width: var(--header-logo-width);
+            height: var(--header-logo-height);
+            object-fit: contain;
+            object-position: left center;
+
+            @include media("<=desktop") {
+                max-width: 150px;
+                max-height: 40px;
+            }
+            @include media(">desktop") {
+                transition: all var(--base-transition);
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        transition: all var(--base-transition);
+        padding-block: var(--navbar-gap_v);
+
+        @include media("<=desktop") {
+            flex-direction: column;
+        }
+    }
+
+    &__col {
+        display: flex;
+        align-items: center;
+        gap: var(--main-header-gap-between-items, 1vw);
+        transition: padding var(--base-transition);
+
+        a.right,
+        a.left {
+            img, picture {
+                max-height: 30px;
+            }
+        }
+
+        @include media("<=desktop") {
+            flex-direction: column;
+            width: 100%;
+        }
+        @include media(">desktop") {
+            &.-left {
+                justify-content: flex-start;
+            }
+            &.-center {
+                justify-content: center;
+                text-align: center;
+            }
+            &.-right {
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    &__widget {
+        @include media("<=desktop") {
+            width: 100%;
+        }
+        .c-block__btn {
+            display: flex;
+            align-items: center;
+            gap: var(--main-header-gap-between-items);
+        }
+    }
+
+    .social-list {
+        gap: var(--navbar-gap_h);
+    }
+
+    &__separator {
+        height: 1em;
+        width: 1px;
+        background: currentColor;
+    }
+
+}

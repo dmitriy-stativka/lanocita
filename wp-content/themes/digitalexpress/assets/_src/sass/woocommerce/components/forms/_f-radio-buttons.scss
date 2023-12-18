@@ -1,0 +1,79 @@
+/**
+ * Woocommerce: Form Radio Buttons
+ */
+
+.woocommerce {
+  --wc-form-radio-bgd: #fff;
+  --wc-form-radio-size: 18px;
+  --wc-form-radio-color: var(--primary-color1);
+}
+
+// Radio Buttons: Wrapper
+.wc-radio-wrapper {
+  position: relative;
+  padding-left: calc(var(--wc-form-checkbox-size) + 10px);
+}
+
+.wc-radio-input {
+  position: absolute;
+  visibility: hidden !important;
+  width: var(--wc-form-checkbox-size);
+  height: var(--wc-form-checkbox-size);
+  left: -9999px;
+}
+
+.wc-radio-label {
+  user-select: none;
+  cursor: pointer;
+}
+
+// Radio Buttons: Label styling
+.wc-radio-label {
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    block-size: var(--wc-form-radio-size);
+    inline-size: var(--wc-form-radio-size);
+    display: inline-block;
+    background-color: var(--wc-form-radio-bgd);
+    box-shadow: inset 0 0 0 1px var(--wc-form-radio-color);
+    transition: 0.25s ease;
+    border-radius: 500px;
+    margin-right: 10px;
+  }
+}
+
+// Radio Buttons: Checked state
+.wc-radio-label-checked {
+  &:before {
+    box-shadow: inset 0 0 0 4px var(--wc-form-radio-color);
+  }
+}
+
+// Radio Buttons: Fake radio button mixin
+@mixin input-fake-radio {
+  @extend .wc-radio-input;
+
+  & + span,
+  & + label {
+    @extend .wc-radio-label;
+  }
+
+  &:checked {
+    & + span,
+    & + label {
+      @extend .wc-radio-label-checked;
+    }
+  }
+}
+
+// Where to change: Radio Buttons
+.woocommerce-shipping-methods,
+#payment .payment_methods {
+  input[type^="radio"] {
+    @include input-fake-radio;
+  }
+}
+

@@ -1,0 +1,110 @@
+/**
+ * Woocommerce: Headings
+ */
+
+.woocommerce {
+  --wc-cart-heading-fs: var(--h1-font-size);
+  --wc-cart-heading-ff: var(--h1-font);
+  --wc-cart-heading-fw: var(--h1-font-weight);
+  --wc-cart-heading-lh: var(--h1-line-height);
+  --wc-cart-heading-tt: var(--h1-text-transform);
+  --wc-cart-heading-color: var(--main-title-color);
+  --wc-cart-heading-margin: var(--h1-margin-bottom);
+  --wc-cart-subheading-fs: var(--h2-font-size);
+  --wc-cart-subheading-ff: var(--h2-font);
+  --wc-cart-subheading-fw: var(--h2-font-weight);
+  --wc-cart-subheading-lh: var(--h2-line-height);
+  --wc-cart-subheading-tt: var(--h2-text-transform);
+  --wc-cart-subheading-color: var(--main-title-color);
+  --wc-cart-subheading-margin: var(--h2-margin-bottom);
+}
+
+.wc-h1-title {
+  @extend .h1;
+}
+
+.wc-h2-title {
+  @extend .h2;
+}
+
+.wc-h3-title {
+  @extend .h3;
+}
+
+.cart-collaterals {
+  .cross-sells, .cart_totals {
+    h2 {
+      @extend .wc-h2-title;
+    }
+  }
+}
+
+.woocommerce-checkout {
+  .woocommerce-billing-fields {
+    > h3 {
+      @extend .wc-h2-title;
+    }
+  }
+
+  h3#order_review_heading {
+    @extend .wc-h2-title;
+  }
+}
+
+.woocommerce-checkout {
+  .woocommerce-billing-fields {
+    > h3 {
+      @extend .wc-h2-title;
+    }
+  }
+
+  h3#order_review_heading {
+    @extend .wc-h2-title;
+  }
+}
+
+.woocommerce-order-received {
+  h1 {
+    @extend .wc-h2-title;
+  }
+
+  h2 {
+    @extend .wc-h2-title;
+  }
+
+  .woocommerce-customer-details {
+    h2 {
+      @extend .wc-h3-title;
+    }
+  }
+}
+
+
+.related.products {
+  h2 {
+    @extend .wc-h2-title;
+  }
+}
+
+#customer_login {
+  h2 {
+    @extend .wc-h3-title;
+  }
+}
+
+.woocommerce-cart,
+.woocommerce-checkout {
+  .l-heading {
+    .c-heading {
+      margin: 0;
+    }
+  }
+}
+
+
+// Hides 'Checkout' title from Thank you page
+.woocommerce-order-received {
+  .l-content-simple-1 {
+    display: none;
+  }
+}

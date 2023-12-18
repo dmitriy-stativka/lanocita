@@ -1,0 +1,16 @@
+/* Headings */
+:root {
+    --h-clamp-formula: 3vw + 1.5rem; // headings size transformation
+}
+
+.c-heading__title {
+    span, i {
+        color: var(--secondary-color3);
+    }
+}
+.c-heading__description {
+    .l-heading & {
+
+    }
+}
+

@@ -1,0 +1,50 @@
+/**
+ * Woocommerce: Order pay (click from account orders page)
+ */
+
+.woocommerce {
+  --wc-order-pay-row-gap: var(--wc-layout-row-gap);
+  --wc-order-pay-left: var(--wc-layout-left);
+  --wc-order-pay-right: var(--wc-layout-right);
+
+  @include media('>desktop') {
+    --wc-order-pay-col-gap: var(--wc-layout-col-gap);
+    --wc-order-pay-left: var(--wc-layout-left);
+    --wc-order-pay-right: var(--wc-layout-right);
+  }
+}
+
+.ds-orderpay-page {
+  form#order_review {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--wc-order-pay-row-gap);
+    position: relative;
+
+    @include media('>desktop') {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: var(--wc-order-pay-col-gap);
+    }
+  }
+
+  table.shop_table {
+    flex: 0 0 calc(var(--wc-order-pay-left) - var(--wc-order-pay-gap) / 2);
+    max-width: calc(var(--wc-order-pay-left) - var(--wc-order-pay-gap) / 2);
+    width: 100%;
+    @include table-border;
+    margin: 0;
+
+    td {
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  div#payments {
+    flex: 0 0 calc(var(--wc-order-pay-right) - var(--wc-order-pay-gap) / 2);
+    max-width: calc(var(--wc-order-pay-right) - var(--wc-order-pay-gap) / 2);
+  }
+}

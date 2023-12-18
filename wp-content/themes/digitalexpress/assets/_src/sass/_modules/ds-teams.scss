@@ -1,0 +1,18 @@
+/**
+ ############################
+ #   MODULE: TEAMS
+ ############################
+ */
+
+
+/* Module Core Styles */
+
+@import '../__core/core-mixins';
+
+@import "teams/_teams-grid";
+
+@import "teams/_teams-details";
+
+/* Project Custom Styles */
+
+@import "../project-custom/modules/custom__team";

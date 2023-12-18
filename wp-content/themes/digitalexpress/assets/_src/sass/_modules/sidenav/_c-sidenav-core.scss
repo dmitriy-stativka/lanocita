@@ -1,0 +1,8 @@
+.c-side-title {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform-origin: top left;
+	transform: rotate(-90deg) translateX(-50%);
+	z-index: 3;
+}

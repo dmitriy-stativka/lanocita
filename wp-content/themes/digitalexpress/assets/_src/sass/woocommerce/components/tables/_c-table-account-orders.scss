@@ -1,0 +1,94 @@
+/**
+ * Woocommerce: Account Order Table
+ */
+@if $--wc-account__orders == ON {
+  .woocommerce {
+
+  }
+
+  // Table for account orders
+  table.account-orders-table {
+    thead th, tbody td {
+      &:first-child {
+        padding-left: var(--wc-table-padding-l-first-column);
+      }
+
+      &:last-child {
+        text-align: left;
+      }
+    }
+
+    thead {
+      th {
+        font-size: var(--wc-table-th-fs);
+        font-weight: var(--wc-table-th-fw);
+        font-family: var(--wc-table-th-ff);
+        padding: var(--wc-table-th-padding);
+        background: var(--wc-table-th-bgd);
+        text-transform: uppercase;
+
+      }
+    }
+
+    tbody {
+      td {
+        font-size: var(--wc-table-td-fs);
+        font-weight: var(--wc-table-td-fw);
+        font-family: var(--wc-table-td-ff);
+        padding: var(--wc-table-td-padding);
+        background: var(--wc-table-td-bgd);
+
+        &.woocommerce-orders-table__cell-order-actions {
+          --btn-padding-top-bottom: 14px;
+          --btn-padding-left-right: 1.6em;
+        }
+      }
+    }
+  }
+
+  @include media('<=tablet') {
+    table.account-orders-table {
+      thead {
+        display: none;
+      }
+
+      tbody {
+        td {
+          @include responsive-th;
+
+          .button {
+            height: 32px;
+            padding: 8px 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:after {
+              display: none;
+            }
+          }
+
+          &:first-child {
+            border-top: var(--wc-table-tr-bdr-width) var(--wc-table-tr-bdr-style) var(--wc-table-tr-bdr-color);
+          }
+
+          .amount {
+            margin-right: 5px;
+          }
+        }
+
+        tr {
+          border-bottom: 20px solid var(--body-color);
+          padding: 13px 15px;
+
+          &:last-child {
+            td {
+              border-bottom: var(--wc-table-tr-bdr-width) var(--wc-table-tr-bdr-style) var(--wc-table-tr-bdr-color);
+              border-right: var(--wc-table-tr-bdr-width) var(--wc-table-tr-bdr-style) var(--wc-table-tr-bdr-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}

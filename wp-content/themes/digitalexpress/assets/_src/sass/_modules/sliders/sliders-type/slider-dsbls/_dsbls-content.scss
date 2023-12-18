@@ -1,0 +1,135 @@
+.c-block-dsbls {
+    position: relative;
+    border-radius: 0;
+    color: var(--dsbls-color);
+
+    .c-block__body {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        pointer-events: none;
+        transition: all .3s;
+    }
+    &:before {
+        inset: 0;
+        background-color: var(--dsbls-overlay);
+        opacity: .7;
+        @include media('>desktop') {
+            opacity: 0;
+        }
+    }
+    &:after {
+        height: 50%;
+        bottom: 0;
+        left: 0;
+        @include gradient-vertical(transparent, var(--dsbls-overlay));
+    }
+
+    @include media('>desktop') {
+        justify-content: flex-end;
+        flex-direction: column;
+        display: flex;
+        padding: 3rem;
+        width: 100%;
+        &:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, .3);
+        }
+    }
+
+    @include media('>desktop-m') {
+        padding: 5rem;
+    }
+
+    @include media('<=desktop') {
+        position: relative;
+        justify-content: flex-end;
+        flex-direction: column;
+        min-height: 350px;
+        height: 100%;
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    @include media('<=tablet') {
+        min-width: 100%;
+    }
+
+    @include media('>desktop') {
+        cursor: pointer;
+
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.is-active {
+        @include media('>desktop') {
+            &:before {
+                opacity: .5;
+            }
+            &:after {
+                height: 30%;
+                @include gradient-vertical(transparent, var(--dsbls-overlay));
+            }
+        }
+
+        .c-block__description {
+            max-height: 10em;
+            transition: max-height .3s ease-in;
+        }
+    }
+
+    .c-block {
+        color: var(--dsbls-color);
+
+        &__title {
+            font-size: var(--dsbls-title-size);
+            font-weight: var(--dsbls-title-weight);
+            margin-bottom: 0.5em;
+        }
+
+        &__body {
+            @include media('<=desktop') {
+                padding: 3rem 2rem;
+            }
+
+            @include media('<=phone-l') {
+                text-align: center;
+            }
+        }
+
+        &__description {
+            font-size: var(--dsbls-text-size);
+            @include media('>desktop') {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height .3s ease-out;
+            }
+        }
+    }
+
+    .c-picture {
+        @include media('>desktop') {
+            display: none;
+        }
+
+        img, picture {
+            @include media('<=desktop') {
+                position: absolute;
+                inset: 0;
+                object-fit: cover;
+                z-index: -1;
+            }
+        }
+    }
+}

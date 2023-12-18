@@ -1,0 +1,24 @@
+// Base styles for the first viewport
+// Helpers and utilities
+@import '__helpers/reboot';
+@import '__helpers/a11y';
+
+// Core settings
+@import '__core/core-mixins';
+@import '__core/core-settings';
+@import 'visuals/_scrollbars';
+@import '_layout/_base';
+
+/**** Site Header */
+@import '_layout/_header';
+/**** End Header */
+
+/* Above the fold modules */
+@import "_modules/banners";
+@import "_modules/headings";
+@import "_components/buttons";
+@import "_components/image";
+@import "_components/с-block";
+
+@import "project-custom/_custom__critical";
+

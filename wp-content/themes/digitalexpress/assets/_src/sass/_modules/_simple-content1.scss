@@ -1,0 +1,12 @@
+/**
+ ############################
+ #   MODULE: Repeatable Content Blocks (rcbl-)
+ ############################
+ */
+
+@import "simple-content1/_rcbl-core";
+
+// Decorative layer: includes animations, custom bgs, etc
+
+@import "simple-content1/visuals/animate/a-rcbl";
+

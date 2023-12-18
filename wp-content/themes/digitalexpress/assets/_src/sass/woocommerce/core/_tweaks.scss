@@ -1,0 +1,23 @@
+/**
+ * Woocommerce: General tweaks
+ */
+.price {
+  del {
+    display: inline-flex;
+    align-items: center;
+    margin-right: .5em;
+    color: var(--wc-product-price-discount-color);
+
+    .amount {
+      font-size: var(--wc-product-price-discount-fs);
+      color: var(--wc-product-price-discount-color);
+      margin-right: 0;
+    }
+  }
+
+  ins {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+}

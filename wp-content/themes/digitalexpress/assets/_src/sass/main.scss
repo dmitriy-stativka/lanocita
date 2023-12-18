@@ -1,0 +1,47 @@
+// Core settings
+@import '__core/core-mixins';
+
+// Helpers and utilities
+@import '__helpers/util-classes';
+@import '__helpers/flexboxgrid';
+@import '__helpers/tinymce-read-more';
+
+// Project/theme specific styles
+@import 'visuals/_decorate';
+@import 'visuals/_animate';
+
+// Site Structure
+@import '_layout/_footer';
+@import '_layout/wysiwyg';
+
+// Site Modules
+@import "_modules/simple-content1";
+@import "_modules/simple-content2";
+@import "_modules/simple-content3";
+@import "_modules/forms";
+@import "_modules/testimonials";
+@import "_modules/wrapper";
+@import "_modules/posts";
+@import "_modules/sidenav";
+//@import "ds-counters";
+//@import "ds-3d-media";
+//@import "tabs";
+//@import "accordions";
+//@import "_sliders";
+//@import "_modules/_teams.scss";
+
+// Site Components
+@import "_components/video";
+@import '_components/socials';
+
+/* Custom Styles For The Project */
+@import "project-custom/_custom__core";
+
+
+
+@import '_custom/header';
+@import '_custom/footer';
+@import '_custom/base';
+@import '_custom/hero';
+@import '_custom/product_home_list';
+@import '_custom/woocomerce';

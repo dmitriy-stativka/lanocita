@@ -1,0 +1,45 @@
+/**
+ * Woocommerce: Checkout Terms and conditions
+ */
+.woocommerce-checkout {
+  --wc-checkout-right: 100%;
+  --wc-checkout-privacy-fs: 1.6rem;
+  --wc-checkout-privacy-fw: 400;
+  --wc-checkout-privacy-lh: 1.4;
+  --wc-checkout-privacy-bgd: #fff;
+  --wc-checkout-privacy-shadow: var(--wc-table-shadow);
+  --wc-checkout-privacy-padding: 2rem;
+}
+
+.woocommerce-terms-and-conditions-wrapper {
+  padding: var(--wc-checkout-privacy-padding);
+  background: var(--wc-checkout-privacy);
+  box-shadow: var(--wc-checkout-privacy-shadow);
+  border: var(--wc-table-bdr-width) var(--wc-table-bdr-style) var(--wc-table-bdr-color);
+  border-radius: var(--wc-table-bdr-radius);
+  margin-bottom: var(--wc-layout-row-gap);
+
+  p {
+    font-size: var(--wc-checkout-privacy-fs);
+    font-weight: var(--wc-checkout-privacy-fw);
+    line-height: var(--wc-checkout-privacy-lh);
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .validate-required {
+    margin: 0;
+  }
+
+  .woocommerce-privacy-policy-text,
+  .woocommerce-terms-and-conditions-checkbox-text {
+    color: var(--primary-text-color);
+    font-size: var(--wc-checkout-privacy-fs);
+    font-family: var(--base-text-font);
+    line-height: 1.2;
+    font-weight: var(--base-text-font-weight);
+    margin-bottom: 1em;
+  }
+}

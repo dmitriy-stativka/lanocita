@@ -1,0 +1,40 @@
+/**
+ * Woocommerce: Product sale badge
+ * Note that this needs to be wrapped into relative parent
+ */
+
+@if $--wc-components__badges == ON {
+  :root {
+    --wc-badge-offset-t: 15px;
+    --wc-badge-offset-r: 15px;
+    --wc-badge-padding: 10px;
+    --wc-badge-font-size: 1rem;
+    --wc-badge-color: var(--primary-color1);
+    --wc-badge-background: var(--secondary-color2);
+    --wc-badge-border: none;
+    --wc-badge-bdr-color: transparent;
+    --wc-badge-border-radius: 50%;
+    --wc-badge-aspect-ratio: 1/1;
+  }
+
+  .onsale {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: var(--wc-badge-offset-t);
+    right: var(--wc-badge-offset-r);
+    padding: var(--wc-badge-padding);
+    font-size: var(--wc-badge-font-size);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--wc-badge-color);
+    background: var(--wc-badge-background);
+    border: var(--wc-badge-border);
+    border-color: var(--wc-badge-bdr-color);
+    border-radius: var(--wc-badge-border-radius);
+    aspect-ratio: var(--wc-badge-aspect-ratio);
+    z-index: 10;
+    position: absolute;
+  }
+}

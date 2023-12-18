@@ -1,0 +1,30 @@
+// Simple double blocks (content 2)
+
+.l-dcbl {
+	--columns-ratio: 50%;
+
+	--c-block-radius: 0;
+	--c-txt-bg: transparent; // Text column background, TODO: add .has-bg class
+
+	--c-block-gl: 0; // outer c-block gap top
+	--c-block-gr: 0; // outer c-block gap right
+	--c-block-gt: 0; // outer c-block gap bottom
+	--c-block-gb: 0; // outer c-block gap left
+	--c-block-m: 0; // outer c-block gap mobile
+
+	--c-txt-gt: 15px; // inner gap top
+	--c-txt-gr: 30px; // inner gap right
+	--c-txt-gb: 15px; // inner gap bottom
+	--c-txt-gl: 30px; // inner gap left
+	--c-txt-gm: 15px; // inner gap mobile
+
+	--list-icon-size: 100px;
+}
+
+.l-dcbl-v1 {
+
+}
+
+.l-dcbl-v2 {
+
+}

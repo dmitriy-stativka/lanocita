@@ -1,0 +1,288 @@
+$fade-transition-duration: 1s;
+$fade-transition-effect: ease-in-out;
+$transform-distance: 60px;
+
+body.wp-admin {
+    [data-viewport='true'] {
+        > * {
+            transform: none !important;
+            pointer-events: auto;
+        }
+
+        * {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    }
+}
+
+[data-viewport] {
+    overflow: hidden;
+
+    > * {
+        pointer-events: none;
+    }
+
+    &.in-view {
+        > * {
+            pointer-events: auto;
+        }
+    }
+}
+
+[data-viewport-effect] {
+    > * {
+        transition-duration: $fade-transition-duration;
+        transition-timing-function: $fade-transition-effect;
+    }
+}
+
+/**
+    * Fade animations:
+    * fade
+    * fade-up, fade-down, fade-left, fade-right
+    * fade-up-right, fade-up-left, fade-down-right, fade-down-left (enable if needed)
+    */
+[data-viewport-effect^='fade'][data-viewport-effect^='fade'] {
+    > * {
+        opacity: 0;
+        transition-property: opacity, transform;
+    }
+
+    &.in-view {
+        > * {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+[data-viewport-effect='fade-up'] {
+    > * {
+        transform: translate3d(0, $transform-distance, 0);
+    }
+}
+
+[data-viewport-effect='fade-down'] {
+    > * {
+        transform: translate3d(0, -$transform-distance, 0);
+    }
+}
+
+[data-viewport-effect='fade-right'] {
+    > * {
+        transform: translate3d(-$transform-distance, 0, 0);
+    }
+}
+
+[data-viewport-effect='fade-left'] {
+    > * {
+        transform: translate3d($transform-distance, 0, 0);
+    }
+}
+
+//[data-viewport-effect='fade-up-right'] {
+//    > * {
+//        transform: translate3d(-$transform-distance, $transform-distance, 0);
+//    }
+//}
+//
+//[data-viewport-effect='fade-up-left'] {
+//    > * {
+//        transform: translate3d($transform-distance, $transform-distance, 0);
+//    }
+//}
+//
+//[data-viewport-effect='fade-down-right'] {
+//    > * {
+//        transform: translate3d(-$transform-distance, -$transform-distance, 0);
+//    }
+//}
+//
+//[data-viewport-effect='fade-down-left'] {
+//    > * {
+//        transform: translate3d($transform-distance, -$transform-distance, 0);
+//    }
+//}
+
+/**
+   * Zoom animations:
+   * zoom-in,
+   * zoom-in-up, zoom-in-down, zoom-in-left, zoom-in-right (enable if needed)
+   * zoom-out, zoom-out-up, zoom-out-down, zoom-out-left, zoom-out-right (enable if needed)
+   */
+[data-viewport-effect^='zoom'][data-viewport-effect^='zoom'] {
+    > * {
+        opacity: 0;
+        transition-property: opacity, transform;
+    }
+
+    &.in-view {
+        > * {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+    }
+}
+
+[data-viewport-effect='zoom-in'] {
+    > * {
+        transform: scale(0.6);
+    }
+}
+
+//[data-viewport-effect='zoom-in-up'] {
+//    > * {
+//        transform: translate3d(0, $transform-distance, 0) scale(.6);
+//    }
+//}
+//
+//[data-viewport-effect='zoom-in-down'] {
+//    > * {
+//        transform: translate3d(0, -$transform-distance, 0) scale(.6);
+//    }
+//}
+//
+//[data-viewport-effect='zoom-in-right'] {
+//    > * {
+//        transform: translate3d(-$transform-distance, 0, 0) scale(.6);
+//    }
+//}
+//
+//[data-viewport-effect='zoom-in-left'] {
+//    > * {
+//        transform: translate3d($transform-distance, 0, 0) scale(.6);
+//    }
+//}
+//
+//[data-viewport-effect='zoom-out'] {
+//    > * {
+//        transform: scale(1.2);
+//    }
+//}
+//
+//[data-viewport-effect='zoom-out-up'] {
+//    > * {
+//        transform: translate3d(0, $transform-distance, 0) scale(1.2);
+//    }
+//}
+//
+//[data-viewport-effect='zoom-out-down'] {
+//    > * {
+//        transform: translate3d(0, -$transform-distance, 0) scale(1.2);
+//    }
+//}
+//
+//[data-viewport-effect='zoom-out-right'] {
+//    > * {
+//        transform: translate3d(-$transform-distance, 0, 0) scale(1.2);
+//    }
+//}
+//
+//[data-viewport-effect='zoom-out-left'] {
+//    > * {
+//        transform: translate3d($transform-distance, 0, 0) scale(1.2);
+//    }
+//}
+
+/**
+  * Slide animations
+  * slide-right, slide-left (enable if needed)
+  */
+[data-viewport-effect^='slide'][data-viewport-effect^='slide'] {
+    > * {
+        transition-property: transform;
+        visibility: hidden;
+    }
+
+    &.in-view {
+        > * {
+            visibility: visible;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
+
+[data-viewport-effect='slide-up'] {
+    > * {
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+[data-viewport-effect='slide-down'] {
+    > * {
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+//[data-viewport-effect='slide-right'] {
+//    > * {
+//        transform: translate3d(-100%, 0, 0);
+//    }
+//}
+//
+//[data-viewport-effect='slide-left'] {
+//    > * {
+//        transform: translate3d(100%, 0, 0);
+//    }
+//}
+
+/**
+   * Flip animations:
+   * flip-left, flip-right, flip-up, flip-down
+   */
+
+//[data-viewport-effect^='flip'][data-viewport-effect^='flip'] {
+//    > * {
+//        backface-visibility: hidden;
+//        transition-property: transform;
+//    }
+//}
+//
+//[data-viewport-effect='flip-left'] {
+//    > * {
+//        transform: perspective(2500px) rotateY(-100deg);
+//    }
+//
+//    &.in-view {
+//        > * {
+//            transform: perspective(2500px) rotateY(0);
+//        }
+//    }
+//}
+//
+//[data-viewport-effect='flip-right'] {
+//    > * {
+//        transform: perspective(2500px) rotateY(100deg);
+//    }
+//
+//    &.in-view {
+//        > * {
+//            transform: perspective(2500px) rotateY(0);
+//        }
+//    }
+//}
+//
+//[data-viewport-effect='flip-up'] {
+//    > * {
+//        transform: perspective(2500px) rotateX(-100deg);
+//    }
+//
+//    &.in-view {
+//        > * {
+//            transform: perspective(2500px) rotateX(0);
+//        }
+//    }
+//}
+//
+//[data-viewport-effect='flip-down'] {
+//    > * {
+//        transform: perspective(2500px) rotateX(100deg);
+//    }
+//
+//    &.in-view {
+//        > * {
+//            transform: perspective(2500px) rotateX(0);
+//        }
+//    }
+//}

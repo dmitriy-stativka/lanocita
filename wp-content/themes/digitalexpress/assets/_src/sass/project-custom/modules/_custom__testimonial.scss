@@ -1,0 +1,50 @@
+/* Testimonials */
+
+.l-testimonials {
+	--testimonial-inner-gap: 30px;
+	--overlayOpacity: .7;
+	--overlayBg: #ccc;
+}
+
+.c-testimonials {
+	--avatar-size: 100px;
+	--avatar-border-size: 4px;
+	--avatar-border-color: #fff;
+	--author-font-size: inherit;
+	--author-color: var(--primary-color1);
+
+	--blockquote-icon-height: 50px;
+	--blockquote-icon-width: 50px;
+	--blockquote-icon-top: 0;
+	--blockquote-icon-left: -15px;
+
+	@include media("<=tablet") {
+		--avatar-size: 65px;
+	}
+
+	&__quote {
+
+	}
+	&__text {
+
+	}
+}
+
+
+.c-cite {
+	&__profile {
+
+	}
+	&__photo {
+
+	}
+	&__author {
+
+	}
+	&__name {
+
+	}
+	&__company {
+
+	}
+}

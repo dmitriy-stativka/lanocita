@@ -1,0 +1,30 @@
+.l-footer-v4 {
+
+	--footer-logo-height: 63px;
+	--footer-top-gap_v: 8vh;
+
+	--footer-background-image-size: contain;
+	--footer-background-image-position: -25% 100%;
+
+	.footer-top__col {
+		&:first-child {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
+
+	.footer-top {
+		padding-bottom: 0;
+	}
+	.footer-bottom {
+		border-top: 0 none;
+	}
+
+	.footer-nav a {
+		&:hover {
+			color: var(--primary-color2);
+			text-decoration: none;
+		}
+	}
+}

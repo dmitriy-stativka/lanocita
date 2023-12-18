@@ -1,0 +1,41 @@
+/* Typography */
+
+@import '../mixins/font-face';
+
+// For google fonts please use https://google-webfonts-helper.herokuapp.com/fonts if possible
+
+/*
+@include addFontFace('Graebenbach Set 01', '../../fonts/GraebenbachSet01', ('woff2', 'woff'), (
+		createFontMap('GraebenbachSet01-Regular', 400),
+		createFontMap('GraebenbachSet01-Bold', 700)
+));
+*/
+
+/* 1rem = 10px */
+
+
+
+@include addFontFace('Inter', '../../fonts/inter-v13-latin', ('woff2', 'woff'), (
+		createFontMap('inter-v13-latin-400', 400),
+		createFontMap('inter-v13-latin-500', 500),
+		createFontMap('inter-v13-latin-600', 600),
+		createFontMap('inter-v13-latin-700', 700)
+));
+
+:root {
+	--font-family-primary: "Inter";
+}
+
+
+html {
+
+	font-size: 50%;
+
+	@include media(">desktop-m") {
+		font-size: 58%;
+	}
+
+	@include media(">desktop-l") {
+		font-size: 62.5%;
+	}
+}

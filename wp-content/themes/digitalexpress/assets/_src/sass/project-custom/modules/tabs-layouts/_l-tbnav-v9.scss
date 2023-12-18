@@ -1,0 +1,87 @@
+.l-tbnav-v9 {
+
+    .c-tbnav {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transition: all var(--base-transition) ease-in;
+
+        &.is-active {
+            box-shadow: 0 0 25px #CDEAEC;
+            border-color: var(--tbnav-border);
+
+            .c-tbnav__deco {
+                &:after {
+                    top: -5px;
+                    opacity: 1;
+                    transition: all ease-in .3s;
+                }
+            }
+        }
+
+        &:not(.is-active):hover {
+            box-shadow: 0 0 25px #CDEAEC;
+            border-color: #CDEAEC;
+        }
+
+        &__label {
+            @include media("<=tablet") {
+                display: none;
+            }
+        }
+
+        &__media {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            margin-bottom: 1em;
+            min-height: 70px;
+        }
+
+        &__img {
+            max-width: 100%;
+            max-height: 70px;
+            height: auto;
+            @include media("<=tablet") {
+                max-width: 90%;
+                max-height: 60%;
+                margin: 0 auto;
+            }
+        }
+
+        &__deco {
+            --decor-size: 40px;
+
+            @include media("<=tablet") {
+                --decor-size: 20px;
+            }
+
+            display: block;
+            width: calc(var(--decor-size) * 2);
+            height: var(--decor-size);
+            position: absolute;
+            overflow: hidden;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &:after {
+                opacity: 0;
+                content: "";
+                position: absolute;
+                width: var(--decor-size);
+                height: var(--decor-size);
+                background: var(--tbnav-bg);
+                transform: rotate(45deg) translateX(-50%);
+                top: -15px;
+                left: 50%;
+                box-shadow: 0 0 25px #CDEAEC;
+                transition: transform .3s;
+            }
+        }
+
+    }
+
+}

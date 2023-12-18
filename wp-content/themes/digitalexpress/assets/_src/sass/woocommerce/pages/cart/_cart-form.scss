@@ -1,0 +1,15 @@
+/**
+ * Woocommerce: Cart Form
+ */
+
+.ds-cart-page {
+  .woocommerce-cart-form {
+    @include media('>desktop') {
+      .continue-shopping {
+        .button {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+/* WYSIWYG feature: readmore collapser */
+
+.read-more-wrapper {
+  &.is-active {
+    .read-more-text {
+      opacity: 1;
+    }
+  }
+
+  .read-more-text {
+    max-height: 0;
+    opacity:0;
+    overflow: hidden;
+    transition: max-height 0.36s ease-in-out, opacity 0.5s ease-in-out;
+
+  }
+
+  .read-more-toggle {
+    cursor: pointer;
+    outline: none;
+  }
+}

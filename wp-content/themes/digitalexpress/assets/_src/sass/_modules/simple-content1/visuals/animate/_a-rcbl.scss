@@ -1,0 +1,29 @@
+@media (hover: hover) {
+    .l-rcbl {
+        .hover-v1 {
+            &:hover {
+                transform: scale(1.05);
+                background-color: #fff;
+            }
+        }
+
+        .hover-v2 {
+            .c-block__description {
+                transition: max-height .3s, transform .5s, opacity .3s;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transform: translateY(10px);
+            }
+
+            &:hover {
+                .c-block__description {
+                    max-height: 200px;
+                    transition: max-height .6s, transform .5s, opacity .3s;
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

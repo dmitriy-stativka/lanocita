@@ -1,0 +1,142 @@
+/* Fix WP admin panel styles */
+
+$admin-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+html {
+	font-size: 10px;
+}
+
+input[type="checkbox"] {
+	height: 20px;
+	width: 20px;
+	min-width: 15px;
+
+	&:checked:before {
+		margin: -2px -3px;
+		height: 22px;
+		width: 22px;
+	}
+}
+input[type="radio"] {
+	height: 15px;
+	width: 15px;
+	min-width: 15px;
+
+	&:checked:before {
+		margin: 2px;
+		height: 9px;
+		width: 9px;
+	}
+}
+
+.wp-admin {
+	font-family: $admin-font;
+	--adminRatio: 0.625;
+	--page-gutter: 20px;
+	.-colors-inverted,
+	.style-dark {
+		color: var(--primary-text-color-alt);
+		--section-title-color: var(--section-title-color-alt);
+	}
+	.wpmdb {
+		.license-block .license-status {
+			font-size: 1.2rem;
+		}
+		.nav {
+			font-size: 1.2rem;
+		}
+		.btn-sm {
+			font-size: 1.2rem;
+		}
+		h2 {
+			font-size: 2rem;
+		}
+		h3 {
+			font-size: 1.8rem;
+		}
+		h4 {
+			font-size: 1.4rem;
+		}
+		label, p {
+			font-size: 1.2rem;
+		}
+		.btn {
+			font-size: 1.2rem;
+		}
+		.actions-panel .action-buttons h4 {
+			font-size: 1.4rem;
+		}
+		.panel-summary > span {
+			font-size: 1.2rem;
+		}
+		.action-panel .panel-header-wrap.child-panel.panel-open h4 {
+			font-size: 1.4rem;
+		}
+		input[type="text"], textarea {
+			font-size: 1.4rem;
+		}
+	}
+
+	article.woocommerce-stats-overview__install-jetpack-promo p,
+	.woocommerce-empty-activity-card .woocommerce-activity-card__body {
+		font-size: 1.2rem;
+	}
+	article.woocommerce-stats-overview__install-jetpack-promo h2,
+	.woocommerce-activity-card__header .woocommerce-activity-card__title {
+		font-size: 1.5rem;
+	}
+
+	.c-form input[type="text"],
+	.c-form input[type="email"],
+	.c-form input[type="phone"],
+	.c-form input[type="tel"],
+	.c-form input[type="number"],
+	.c-form textarea,
+	.c-form select {
+		box-sizing: border-box;
+		padding: var(--input-padding-top-bottom, 4px) var(--input-padding-left-right, 10px);
+		background: var(--input-background-color, #fff);
+		color: var(--input-color);
+		box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.1);
+		border: var(--input-border-width, 1px) solid var(--input-border-color, #666);
+		border-radius: var(--input-border-radius, 5px);
+		font-size: var(--input-font-size, 16px);
+		font-weight: var(--input-font-weight, 400);
+	}
+}
+
+.editor-styles-wrapper .acf-block-preview {
+	//background-color: var(--body-color, #fff);
+	color: var(--primary-text-color, #1e1e1e);
+	font-family: var(--font-family-primary, $admin-font);
+	line-height: var(--text-1-line-height, 1.4);
+	font-size: var(--text-1-font-size, 20px);
+
+	.acf-block-preview {
+		color: inherit;
+		font-size: inherit;
+	}
+
+	p {
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.c-heading .c-heading__title {
+		margin: 0 !important;
+		font-size: inherit;
+		font-weight: inherit;
+		color: var(--main-title-color);
+	}
+	.-colors-inverted,
+	.style-dark {
+		.c-heading .c-heading__title {
+			color: var(--main-title-color-alt);
+		}
+	}
+}
+
+// Frontend theme

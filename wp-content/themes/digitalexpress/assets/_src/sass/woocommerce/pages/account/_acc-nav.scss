@@ -1,0 +1,180 @@
+/**
+ * Woocommerce: Account navigation
+ */
+
+.woocommerce-MyAccount {
+  &-navigation {
+    ul {
+      @include media('>desktop') {
+        border-top: 1px solid var(--wc-acc-nav-link-border-bottom);
+      }
+    }
+
+    li {
+      border-bottom: 1px solid var(--wc-acc-nav-link-border-bottom);
+    }
+
+    a {
+      display: block;
+      padding: var(--wc-acc-nav-link-ptb, 0) var(--wc-acc-nav-link-plr, 0);
+      font-weight: var(--wc-acc-nav-link-fw);
+      font-size: var(--wc-acc-nav-link-fs);
+      line-height: var(--wc-acc-nav-link-lh);
+      color: var(--wc-acc-nav-link-color);
+    }
+
+    // Link icons
+    &-link {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:after {
+          display: block;
+          width: var(--wc-acc-nav-link-icon-size);
+          height: var(--wc-acc-nav-link-icon-size);
+          background-color: var(--primary-color1);
+          mask-size: 100% 100%;
+          -webkit-mask-size: 100% 100%;
+          opacity: 0.3;
+          transition: opacity 0.3s ease;
+          content: "";
+          // Defualt icon, in case we have item with no icon
+          @include mask-image("../../images/woocommerce/icon-dashboard.svg");
+        }
+      }
+
+      &:hover,
+      &.is-active {
+        a {
+          color: var(--wc-acc-nav-link-color-active);
+
+          &:after {
+            opacity: 1;
+            background-color: var(--primary-color1);
+          }
+        }
+      }
+
+      &--dashboard a:after {
+        @include mask-image("../../images/woocommerce/icon-dashboard.svg");
+      }
+
+      &--orders a:after {
+        @include mask-image("../../images/woocommerce/icon-orders.svg");
+      }
+
+      &--edit-address a:after {
+        @include mask-image("../../images/woocommerce/icon-addresses.svg");
+      }
+
+      &--edit-account a:after {
+        @include mask-image("../../images/woocommerce/icon-account.svg");
+      }
+
+      &--customer-logout a:after {
+        @include mask-image("../../images/woocommerce/icon-logout.svg");
+      }
+
+      // Plugins
+      &--wishlist a:after,
+      &--tinv_wishlist a:after {
+        @include mask-image("../../images/woocommerce/icon-wishlist.svg");
+      }
+
+      &--woocommerce-waitlist a:after {
+        @include mask-image("../../images/woocommerce/icon-waitlist.svg");
+      }
+
+      &--wc-smart-coupons a:after {
+        @include mask-image("../../images/woocommerce/icon-coupon.svg");
+      }
+
+    }
+  }
+}
+
+// Sidebar on mobile resolutions
+@include media("<=desktop") {
+  .woocommerce-navigation-wrapper {
+    z-index: 98;
+    position: fixed;
+    top: calc(var(--navbar-height, 60px) + var(--wc-notice-height, 0px));
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    .admin-bar & {
+      top: calc(var(--navbar-height, 60px) + var(--wc-notice-height, 0px) + var(--admin-bar));
+    }
+
+    .woocommerce-nav-toggle {
+      background: #fff;
+      height: var(--wc-acc-nav-height);
+      display: flex;
+      align-items: center;
+      z-index: 98;
+      border-bottom: 1px solid var(--wc-acc-nav-link-border-bottom);
+    }
+  }
+
+  .woocommerce-nav-toggle {
+    padding-left: 20px;
+
+    .filter-btn {
+      display: none;
+
+      &.is-active {
+        display: block;
+      }
+    }
+  }
+
+  .woocommerce-navigation-wrapper.is-visible {
+    .woocommerce-MyAccount-navigation {
+      left: 0;
+    }
+  }
+
+  .woocommerce-MyAccount {
+    &-navigation {
+      position: fixed;
+      left: -100%;
+      width: 300px; // TODO
+      max-width: 90%;
+      transition: left 0.3s;
+      background: white;
+      overflow-y: auto;
+      top: calc(var(--navbar-height, 60px) + var(--wc-acc-nav-height) + var(--wc-notice-height, 0px));
+      height: calc(100vh - calc(var(--navbar-height, 60px) + var(--wc-notice-height, 0px)));
+      box-shadow: var(--wc-cart-box-shadow);
+
+      .admin-bar & {
+        top: calc(var(--navbar-height, 60px) + var(--admin-bar) + var(--wc-notice-height, 0px) + var(--wc-acc-nav-height));
+        height: calc(100vh - calc(var(--navbar-height, 60px) + var(--admin-bar) + var(--wc-notice-height, 0px) + var(--wc-acc-nav-height)));
+      }
+
+      li {
+        padding: 0 20px; // TODO
+        &:first-child {
+          a {
+            border-top: 0;
+          }
+        }
+      }
+    }
+
+    &-content {
+      min-height: 440px; // TODO: Height of the sidebar
+    }
+  }
+
+  .site-header {
+    &.is-sticky {
+      + .site-content {
+
+      }
+    }
+  }
+}

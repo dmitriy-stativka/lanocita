@@ -1,0 +1,67 @@
+@import "tabs-layouts/l-tbnav-v6";
+@import "tabs-layouts/l-tbnav-v9";
+
+@import "tabs-layouts/l-tbnav-timeline";  // REMOVE IF NO TIMELINE SLIDER
+
+/* Tabs */
+
+.m-tabs {
+	--tbnav-size: 1.8rem;
+	--tbnav-weight: 500;
+	--tbnav-uppercase: none;
+	--tbnav-bg: #f4f4f4;
+	--tbnav-bg-active: #eee;
+	--tbnav-color: var(--primary-color1);
+	--tbnav-color-active: var(--primary-color3);
+	--tbnav-gap: 5%;
+	--tbnav-border: #eee;
+	--tbnav-border-active: #ccc;
+	--tbnav-padding: 15px 20px;
+	--tbnav-align: center;
+	--tbnav-mobile-bg: var(--primary-color1);
+	--tbnav-mobile-color: #fff;
+}
+
+.l-tbnav {
+	margin: 0 auto 20px;
+	&__item {
+		flex: 1 1 0;
+	}
+}
+
+.c-tbnav {
+	&__media {
+
+	}
+	&__img {
+
+	}
+	&__label {
+
+	}
+	&__deco {
+
+	}
+	&.active {
+
+	}
+}
+
+
+.l-tbpanel {
+	&__item {
+
+	}
+	&__label {
+
+	}
+	.c-block__text {
+
+	}
+	.c-block__media {
+
+	}
+	&.is-active {
+
+	}
+}

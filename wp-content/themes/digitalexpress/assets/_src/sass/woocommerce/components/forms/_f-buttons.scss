@@ -1,0 +1,146 @@
+/**
+ * Woocommerce: Buttons
+ * All buttons are connected to the DSMP core, except show/hide filter button
+ */
+
+:root {
+  --wc-btn-radius: 40px;
+}
+
+.woocommerce,
+.woocommerce-cart,
+.woocommerce-checkout {
+  .woocommerce {
+    .c-btn {
+      border-radius: var(--wc-btn-radius);
+    }
+  }
+}
+
+.woocommerce-button {
+  --btn-ico-color: currentColor;
+  --icon-shift: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  background-color: transparent;
+  position: relative;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+  white-space: nowrap;
+  transition: transform var(--base-transition), border var(--base-transition), background var(--base-transition);
+  border-radius: var(--wc-btn-radius);
+}
+
+// Default buttons, from DSMP core
+a.button,
+button.button,
+input.button,
+#respond input#submit {
+  @extend .woocommerce-button;
+  align-items: center;
+  background-color: var(--btn-primary-bg);
+  border: var(--btn-primary-border) solid var(--btn-primary-border-color);
+  box-shadow: var(--btn-box-shadow, none);
+  color: var(--btn-primary-color);
+  font-family: var(--btn-font-family);
+  font-size: var(--btn-font-size, 1.8rem);
+  font-weight: var(--button-font-weight, 400);
+  line-height: var(--base-text-line-height, 1);
+  padding: var(--btn-padding-top-bottom, 10px) var(--btn-padding-left-right, 20px);
+  text-align: center;
+  text-transform: var(--btn-text-transform, none);
+  border-radius: var(--wc-btn-radius);
+
+  &:not(:only-child) {
+    margin: 2px; // Buffer between multiple buttons
+  }
+
+  @media (hover: hover) {
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--btn-primary-bg-hover);
+        color: var(--btn-primary-color-hover);
+        transition: .3s ease;
+      }
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.button {
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+
+// Show/hide filter button
+.filter-btn {
+  --btn-primary-bg: transparent;
+  --wc-filter-btn-icon-size: 30px;
+  padding: var(--btn-padding-top-bottom, 10px) var(--btn-padding-left-right, 20px) var(--btn-padding-top-bottom, 10px) 0;
+  font-size: var(--btn-font-size, 1.8rem);
+  font-family: var(--btn-font-family);
+  font-weight: var(--button-font-weight, 400);
+  text-transform: var(--btn-text-transform, none);
+  align-items: center;
+  color: var(--primary-text-color);
+  background-color: var(--btn-primary-bg);
+  border: var(--btn-primary-border) solid var(--btn-primary-border-color);
+  border-radius: var(--btn-border-radius, 0);
+  transition: .3s ease;
+
+  // Show/hide filters button
+  @include media(">desktop") {
+    display: none;
+
+    &.is-active {
+      display: flex;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+      transition: .3s ease;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  svg {
+    width: var(--wc-filter-btn-icon-size);
+    margin-right: 0.7em;
+    color: var(--primary-color1);
+  }
+}
+
+// Styling fixes for buttons with JS injected icons
+@if $--wc-buttons-with-icons == ON {
+  .woocommerce-form-login .button,
+  .woocommerce-form-register .button,
+  .cart-collaterals .button,
+  .coupon .button,
+  .return-to-shop .button,
+  .woocommerce-form-coupon .button,
+  .woocommerce-message .button,
+  .woocommerce-MyAccount-content a.button,
+  .single-product .related.products .view-product-link {
+    display: inline-flex !important;
+    padding: 0 !important;
+    line-height: inherit;
+  }
+}

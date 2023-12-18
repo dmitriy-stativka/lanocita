@@ -1,0 +1,101 @@
+/**
+ * Woocommerce: Cart Collaterals Box
+ */
+
+.woocommerce {
+  --wc-cart-table-padding: 2.5rem 2.4rem;
+}
+
+.ds-cart-page {
+  &__cart-collaterals {
+    width: 100%;
+    @include media('>desktop') {
+      max-width: calc(var(--wc-cart-totals) - var(--wc-cart-gap) / 2);
+    }
+  }
+
+  .cart-collaterals {
+    &__wrapper {
+      box-shadow: var(--wc-table-shadow);
+      background: var(--wc-table-bgd);
+      border: 1px solid var(--wc-table-bdr-color);
+      border-radius: var(--wc-table-bdr-radius);
+      margin-bottom: var(--wc-layout-row-gap);
+    }
+
+    &__header {
+      background: var(--primary-color1);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      line-height: 1;
+      font-size: var(--smaller-text-size);
+      border-radius: var(--wc-table-bdr-radius) var(--wc-table-bdr-radius) 0 0;
+
+      svg {
+        margin-right: 10px;
+        width: 40px;
+      }
+
+      span {
+        font-weight: 700;
+        color: var(--primary-color2);
+      }
+    }
+
+    &__footer {
+      display: flex;
+      color: rgba(2, 20, 25, 0.60);
+      flex-direction: row;
+      align-items: center;
+      @include media('>desktop') {
+        justify-content: space-between;
+      }
+
+      &-title {
+        font-size: 13px;
+        width: 33%;
+        margin-right: 1%;
+        @include media('>desktop') {
+          font-size: 1.6rem;
+        }
+      }
+
+      &-img {
+        background-position: right center;
+        background-repeat: no-repeat;
+        display: block;
+        height: 18px;
+        background-size: contain;
+        width: 66%;
+        @include media('>desktop') {
+          max-width: 270px;
+        }
+      }
+    }
+
+    .cart_totals {
+      padding: var(--wc-cart-table-padding);
+
+      h2 {
+        @extend .h3;
+      }
+    }
+
+    .checkout-button {
+      width: 100%;
+    }
+
+    .wc-proceed-to-checkout {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-areas:
+    'bcheckout';
+
+      .checkout-button {
+        grid-area: bcheckout;
+      }
+    }
+  }
+}

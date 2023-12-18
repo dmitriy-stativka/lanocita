@@ -1,0 +1,14 @@
+2023-12-18T13:49:41+00:00 CRITICAL Uncaught Error: Class 'WishlistPlugin' not found in /Users/dimastativka/Documents/domains/lanocita/wp-content/themes/digitalexpress/header.php:135
+Stack trace:
+#0 /Users/dimastativka/Documents/domains/lanocita/wp-includes/template.php(790): require_once()
+#1 /Users/dimastativka/Documents/domains/lanocita/wp-includes/template.php(725): load_template('/Users/dimastat...', true, Array)
+#2 /Users/dimastativka/Documents/domains/lanocita/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /Users/dimastativka/Documents/domains/lanocita/wp-content/plugins/woocommerce/templates/single-product.php(22): get_header('shop')
+#4 /Users/dimastativka/Documents/domains/lanocita/wp-includes/template-loader.php(106): include('/Users/dimastat...')
+#5 /Users/dimastativka/Documents/domains/lanocita/wp-blog-header.php(19): require_once('/Users/dimastat...')
+#6 /Users/dimastativka/Documents/domains/lanocita/index.php(17): require('/Users/dimastat...')
+#7 {main}
+  thrown у /Users/dimastativka/Documents/domains/lanocita/wp-content/themes/digitalexpress/header.php доступно 135
+
+2023-12-18T15:13:31+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' у /Users/dimastativka/Documents/domains/lanocita/wp-content/themes/digitalexpress/header.php доступно 116
+

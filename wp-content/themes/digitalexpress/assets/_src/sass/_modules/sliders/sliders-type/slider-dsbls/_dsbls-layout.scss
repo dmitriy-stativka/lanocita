@@ -1,0 +1,97 @@
+/* DSBLS Slider */
+
+.l-slider-double-cards {
+
+    .m-slider {
+        &__container {
+            @include media('<=desktop') {
+                display: none;
+            }
+        }
+        &__slide {
+            height: auto;
+        }
+        &__arrows {
+            @include media('>desktop') {
+                display: none;
+            }
+            @include media('<=desktop') {
+                display: flex;
+            }
+        }
+    }
+
+    .m-slide {
+        max-height: var(--dsbls-height);
+
+        @include media('>desktop') {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: relative;
+        }
+
+        &__media {
+            &, img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .l-slider-nav {
+        @include media('>desktop') {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+        }
+
+        &__container {
+            display: flex;
+            height: 100%;
+
+            &--fluid {
+                @include media('>desktop') {
+                    padding: 0;
+                }
+            }
+        }
+
+        &__inner {
+            height: 100%;
+            width: 100%;
+        }
+
+        &__pagination {
+            display: flex;
+            justify-content: center;
+            margin-block: 30px;
+
+            @include media('>desktop') {
+                display: none;
+            }
+
+        }
+    }
+
+    &.container {
+        &:after,
+        .l-slider-nav {
+            left: var(--page-gutter);
+            right: var(--page-gutter);
+            width: auto;
+        }
+    }
+}
+
+
+.l-slider-double-cards {
+    padding-block: 0;
+}

@@ -1,0 +1,33 @@
+.l-footer-v1 {
+
+	.footer-bottom {
+		@include media(">tablet") {
+			&__inner {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+		}
+	}
+
+	.copyright {
+		@include media("<=tablet") {
+			margin-top: 2em;
+		}
+		@include media(">tablet") {
+			order: -1;
+			margin-right: auto;
+		}
+	}
+
+	.footer-nav {
+		@include media(">tablet") {
+			margin-left: calc(var(--footer-link-gap_v) * 2);
+		}
+		@include media("<=desktop") {
+			.menu-item {
+				margin-bottom: var(--footer-link-gap_v);
+			}
+		}
+	}
+}

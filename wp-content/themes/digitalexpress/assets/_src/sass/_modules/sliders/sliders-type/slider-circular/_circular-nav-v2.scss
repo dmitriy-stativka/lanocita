@@ -1,0 +1,68 @@
+.c-slider-nav-v2 {
+    inset: 10px;
+
+    .c-slider-nav {
+
+        &__item {
+            display: flex;
+            color: rgba(42, 42, 42, 0.2);
+            padding-right: 30px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: rotate(var(--az)) translate(calc(var(--r))) rotate(calc(-1*var(--az)));
+            cursor: pointer;
+            //animation: circle 50s linear infinite;
+
+            &:before {
+                content: ' ';
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: #4A90E2;
+                margin: -7px;
+                z-index: 10;
+                left: 50%;
+                top: 50%;
+            }
+
+            &.is-active {
+
+                &:before {
+                    width: 42px;
+                    height: 42px;
+                    background-color: #ED8B09;
+                    margin: -21px;
+                    box-shadow: 0 2px 35px 25px rgba(249,178,13,0.25);
+                    transition: all 0.15s;
+                }
+
+                .c-slider-nav {
+                    &__label {
+                        color: #0047AB;
+                        > span {
+                            color: #2A2A2A;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__label {
+            span {
+                display: block;
+            }
+        }
+    }
+}
+
+@keyframes circle {
+    from {
+        transform: rotate(calc(var(--az))) translate(var(--r)) rotate(calc(-1*var(--az)));
+    }
+    to {
+        transform: rotate(calc(var(--az) - 360deg)) translate(calc(var(--r))) rotate(calc(-1*var(--az) + 360deg));
+    }
+}

@@ -1,0 +1,105 @@
+// Core settings
+@import '__core/core-mixins';
+@import '__helpers/util-classes';
+@import '__helpers/flexboxgrid';
+@import '__helpers/tinymce-read-more';
+
+// General components
+@import '_components/buttons';
+@import '_components/image';
+@import '_components/с-block';
+
+// Visuals
+@import 'visuals/_decorate';
+@import 'visuals/_animate';
+
+// Layout
+@import '_layout/wysiwyg';
+
+// Site Components
+@import '_modules/simple-content1';
+@import '_modules/simple-content2';
+@import '_modules/simple-content3';
+@import '_modules/banners';
+@import '_modules/forms/_forms-layout';
+@import '_modules/forms';
+@import '_modules/headings';
+@import '_modules/testimonials';
+@import '_modules/wrapper';
+@import '_modules/posts';
+@import '_modules/sidenav';
+//@import 'ds-counters';
+//@import 'ds-3d-media';
+//@import 'tabs';
+//@import 'accordions';
+//@import 'sliders';
+//@import '_modules/_teams.scss';
+
+// Blog
+@import 'blog/widgets/cta-custom-box';
+
+@import 'admin/global';
+@import 'admin/guttenberg';
+@import 'admin/settings';
+@import 'admin/frontend-specific';
+@import 'admin/header';
+
+// Custom core
+@import 'project-custom/_custom__core';
+
+// Vendors
+@import '../../../assets/vendors/swiper/swiper-bundle.min.css';
+
+.block-label, .block-name {
+    z-index: 20;
+}
+
+.acf-field-group-banner-1-module-effects-viewport-threshold {
+    .acf-range-wrap {
+        display: flex;
+    }
+}
+
+.wp-admin {
+    .m-wrapper {
+        &.has-columns {
+            .m-wrapper__inner {
+                gap: 0;
+            }
+
+            .block-editor-inner-blocks {
+                width: 100%;
+            }
+
+            .block-editor-block-list__layout {
+                align-items: center;
+                display: flex;
+                flex-wrap: nowrap;
+                gap: var(--wrap-col-gap);
+                margin-inline: auto;
+                width: 100%;
+                max-width: calc(var(--content-width) + var(--page-gutter, 20px) * 2);
+
+                .wp-block {
+                    flex: 1 !important;
+                }
+
+                .m-wrapper-column {
+                    max-width: 100% !important;
+                    flex-direction: column;
+
+                    .block-editor-block-list__layout {
+                        --wrap-col-1: 100%;
+                        --wrap-col-2: 100%;
+                        flex-direction: column;
+
+                        .wp-block {
+                            width: 100%;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

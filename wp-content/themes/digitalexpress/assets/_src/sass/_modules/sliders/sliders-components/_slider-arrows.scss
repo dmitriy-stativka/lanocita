@@ -1,0 +1,117 @@
+/* Slider Navigation / Arrows */
+
+.m-slider {
+
+	@include media('<=desktop') {
+		--swiper-outer-gap: 40px;
+	}
+
+	&__nav {
+
+	}
+
+	& &__arrows {
+		background: var(--swiper-arrows-bg);
+		box-shadow: var(--swiper-arrows-shadow);
+		min-width: var(--swiper-navigation-size);
+		padding: 0;
+		margin: 0;
+		transition: all .2s;
+	}
+	&__arrows {
+
+		border-radius: 100%;
+
+		.is-rectangular & {
+			border-radius: 0;
+			width: calc(var(--swiper-navigation-size) / 1.5);
+			height: calc(var(--swiper-navigation-size) * 1.5);
+			min-width: calc(var(--swiper-navigation-size) / 1.5);
+		}
+		.is-square & {
+			border-radius: 0;
+		}
+
+		&:after {
+			display: none;
+			content: none;
+		}
+
+		.arrow-icon {
+			max-width: 50%;
+			color: var(--primary-color1);
+			fill: var(--primary-color1);
+		}
+
+		&.-next {
+			@include media(">desktop") {
+				right: calc(var(--page-gutter) + 10px);
+			}
+		}
+
+		&.-prev {
+			@include media(">desktop") {
+				left: calc(var(--page-gutter) + 10px);
+			}
+
+			.arrow-icon {
+				transform: rotate(180deg);
+			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--outline-color);
+			outline-offset: 1px;
+		}
+
+		&:hover {
+			.arrow-icon {
+				color: var(--primary-color2)
+			}
+		}
+	}
+
+	[data-slider-navigation="inner-arrows"],
+	[data-slider-navigation="outer-arrows"] {
+		+ .m-slider__nav .m-slider__arrows {
+			transform: translateY(-50%);
+			top: 50%;
+		}
+	}
+
+	/* Outer Arrows */
+	[data-slider-navigation="outer-arrows"] {
+		@include media('>tablet') {
+			margin-inline: var(--swiper-outer-gap);
+		}
+	}
+	/* Bottom Arrows */
+	[data-slider-navigation="bottom-arrows"] {
+		+ .m-slider__nav {
+			display: flex;
+			justify-content: center;
+			height: 30px;
+			.m-slider__arrows {
+				margin: 0 10px;
+				position: relative;
+				left: unset;
+				right: unset;
+			}
+		}
+	}
+
+	[data-slider-pagination="progressbar"] + .m-slider__nav,
+	[data-slider-pagination="combo"] + .m-slider__nav {
+		justify-content: flex-end;
+		transform: translateY(-100%);
+		z-index: 10;
+		position: relative;
+		.m-slider__arrows {
+			top: 0;
+		}
+	}
+}

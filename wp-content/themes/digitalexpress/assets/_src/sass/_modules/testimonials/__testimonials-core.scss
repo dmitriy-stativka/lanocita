@@ -1,0 +1,78 @@
+/**
+ ########################
+ #   Module TESTIMONIALS:
+ ########################
+ */
+
+.c-testimonials {
+	position: relative;
+	z-index: 2;
+	margin: 0;
+	color: var(--ttm-font-color);
+}
+
+.c-cite {
+	display: flex;
+	flex-direction: column;
+
+	&__profile {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		.align-center &,
+		.text-center & {
+			justify-content: center;
+		}
+	}
+
+	&__text {
+		position: relative;
+		padding-top: var(--blockquote-icon-height);
+		&:before {
+			content: '';
+			position: absolute;
+			top: var(--blockquote-icon-top);
+			left: var(--blockquote-icon-left);
+			background-image: var(--blockquote-style);
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: contain;
+			height: var(--blockquote-icon-height);
+			width: var(--blockquote-icon-width);
+		}
+	}
+
+	&__photo {
+		align-self: flex-start;
+		max-width: var(--avatar-size);
+		flex: 0 0 var(--avatar-size);
+		font-size: 0;
+		line-height: 0;
+		border: var(--avatar-border-size) solid var(--avatar-border-color);
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&.is-img-rounded {
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	}
+
+	&__content {
+		font-style: normal;
+		@include media('<=tablet') {
+			text-align: center;
+		}
+	}
+
+	&__name {
+		font-size: var(--author-font-size);
+		color: var(--author-color);
+	}
+
+}

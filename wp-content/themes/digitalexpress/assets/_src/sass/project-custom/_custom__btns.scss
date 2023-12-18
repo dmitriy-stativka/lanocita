@@ -1,0 +1,72 @@
+.c-btn {
+
+  &.-primary {
+    .c-btn__txt {
+
+    }
+    .c-btn__ico {
+
+    }
+  }
+
+  &.-secondary {
+    .c-btn__txt {
+
+    }
+    .c-btn__ico {
+
+    }
+  }
+
+  &.-link.has-icon {
+    .c-btn__txt {
+
+    }
+    .c-btn__ico {
+
+    }
+  }
+
+  &.-small {
+    --btn-padding-left-right: 20px;
+    --btn-padding-top-bottom: 10px;
+
+    .c-btn__txt {
+      font-size: .8em;
+    }
+
+    .icon {
+      max-width: 60%;
+    }
+  }
+
+  &.-large {
+    .c-btn__txt {
+      font-size: 1.4em;
+    }
+  }
+}
+
+
+/* CF7 Submit Button */
+
+.wpcf7-submit,
+.gform_button,
+.gform-button {
+  @extend .c-btn, .-primary;
+  font-size: var(--btn-font-size, 1.8rem);
+  font-family: var(--btn-font-family);
+  text-transform: var(--btn-text-transform, none);
+  font-weight: var(--button-font-weight, 400);
+  box-shadow: var(--btn-box-shadow, none);
+  border-radius: var(--btn-border-radius, 0);
+  padding: var(--btn-padding-top-bottom) var(--btn-padding-left-right);
+  justify-content: center;
+  transition: all var(--base-transition);
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 2px 2px rgba(0, 7, 63, 0.2);
+    }
+  }
+}

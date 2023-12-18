@@ -1,0 +1,24 @@
+/* Woocommerce: Core */
+// Global
+@import "custom__wc";
+
+// Pages
+@import "custom__wc-account";
+@import "custom__wc-product";
+@import "custom__wc-cart";
+@import "custom__wc-checkout";
+@import "custom__wc-thank-you";
+
+// Plugins
+@import "custom__wc-plugins";
+
+// Components
+@import "custom__wc-components";
+
+// Widgets
+@import "custom__wc-components";
+
+// Product loop
+@import "custom__wc-product-loop";
+
+

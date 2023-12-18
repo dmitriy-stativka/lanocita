@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    font-family: 'Inter';
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #fff;    /* цвет бегунка */
+        border-radius: 20px;       /* округлось бегунка */
+        border: 3px solid #000;  /* отступ вокруг бегунка */
+      }
+
+    &.shadow{
+        overflow: hidden;
+        
+       &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0, .5);
+       }
+    }
+}
+
+:root{
+    --base-transition: .3s ease;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.c-btn{
+    letter-spacing: inherit;
+    transition: letter-spacing var(--base-transition);
+
+    &:hover{
+        letter-spacing: 1px;
+        transition: letter-spacing var(--base-transition);
+    }
+}

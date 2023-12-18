@@ -1,0 +1,35 @@
+/**
+ * Woocommerce: Breadcrumbs
+ */
+
+.woocommerce {
+  --wc-breadcrumb-font-size: 1.4rem;
+  --wc-breadcrumb-font-weight: var(--base-text-font-weight);
+  --wc-breadcrumb-line-height: 1.2;
+  --wc-breadcrumb-padding-tb: 2.4em;
+}
+
+.woocommerce-breadcrumb {
+  color: var(--primary-text-color);
+  font-size: var(--wc-breadcrumb-font-size);
+  font-weight: var(--wc-breadcrumb-font-weight);
+  line-height: var(--wc-breadcrumb-line-height);
+  padding: var(--wc-breadcrumb-padding-tb) 0;
+
+  a {
+    color: var(--secondary-color2);
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .3s ease;
+
+    &:hover {
+      color: var(--primary-color2);
+      transition: all .3s ease;
+    }
+  }
+
+  .delimiter {
+    display: inline-block;
+    padding: 0 0.5em;
+  }
+}

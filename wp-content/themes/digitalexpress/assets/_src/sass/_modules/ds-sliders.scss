@@ -1,0 +1,20 @@
+/**
+ ############################
+ #   MODULE: SLIDERS
+ ############################
+ */
+
+@import '../__core/core-mixins';
+
+@import "sliders/_sliders-core";
+
+@import "sliders/sliders-type/slider-dsbls";
+@import "sliders/sliders-type/slider-logos";
+@import "sliders/sliders-type/slider-banner-tabs";
+
+@import "sliders/sliders-components/slider-arrows";
+@import "sliders/sliders-components/slider-pagination";
+@import "sliders/sliders-components/slider-thumbs";
+@import "sliders/sliders-components/slider-filter-nav";
+
+@import "../project-custom/modules/custom__sliders";

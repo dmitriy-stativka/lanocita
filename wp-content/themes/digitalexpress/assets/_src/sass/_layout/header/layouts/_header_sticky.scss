@@ -1,0 +1,46 @@
+.is-sticky {
+
+	.site-header__main {
+		background-color: var(--header-mini-bg, var(--primary-color1));
+		box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+
+		.site-header__row {
+			padding-block: 1px;
+		}
+	}
+
+	.site-header__logo {
+		@include media(">desktop") {
+			height: 50px;
+			max-height: 50px;
+			img, svg, picture {
+				max-height: 50px;
+			}
+		}
+	}
+
+	.site-header__top {
+		.site-header__row {
+			max-height: 0;
+			overflow: hidden;
+			padding: 0;
+		}
+	}
+
+	.site-header__bottom {
+		body:not(.nav-active) & {
+			opacity: 0;
+			transform: translateY(-100px);
+			position: absolute;
+			z-index: -1;
+		}
+	}
+
+	.nav-main__btn.-desktop {
+		display: block;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}

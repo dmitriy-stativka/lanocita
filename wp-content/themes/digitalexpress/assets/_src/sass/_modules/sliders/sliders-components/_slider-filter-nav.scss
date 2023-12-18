@@ -1,0 +1,29 @@
+.l-slider-fnav {
+    margin-bottom: 2rem;
+
+    .c-fnav {
+        display: flex;
+        &__item {
+            margin-right: 10px;
+            display: inline-flex;
+            a {
+                padding: .3em 1em;
+            }
+            &.is-active a,
+            a:hover {
+                background: var(--primary-color1);
+                color: #fff;
+            }
+        }
+    }
+
+    .c-slider-fnav__dropdown {
+        display: none;
+    }
+
+    &.has-dropdown {
+        .c-slider-fnav__dropdown {
+            display: block;
+        }
+    }
+}

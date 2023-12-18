@@ -1,0 +1,69 @@
+// Core Structure
+
+.gridder-show {
+	position: relative;
+}
+
+.gridder-navigation {
+	position: absolute;
+	width: 30%;
+	display: flex;
+	justify-content: flex-end;
+
+	.gridder-close {
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		overflow: hidden;
+		text-indent: 999px;
+	}
+}
+
+.c-team__details {
+	padding: 20px;
+
+	&-inner {
+		display: flex;
+	}
+	.c-team__preview-brief {
+		display: none;
+	}
+	&-name {
+		color: var(--team-details-name-color);
+		font-size: var(--team-details-name-size);
+		font-weight: var(--team-details-name-weight);
+	}
+	&-role {
+		color: var(--team-details-role-color);
+		font-size: var(--team-details-role-size);
+		font-weight: var(--team-details-role-weight);
+	}
+	&-bio {
+		overflow: auto;
+	}
+	&-social {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	&-phone {
+		white-space: nowrap;
+	}
+	.c-team__preview {
+		@include media(">desktop") {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+	&-img {
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		@include media("<=tablet") {
+			display: none;
+		}
+	}
+}
+
+
+

@@ -1,0 +1,43 @@
+.l-tbnav-v6 {
+	width: auto;
+
+	.l-tbnav__item {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.c-tbnav {
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			opacity: 0;
+			transition: all var(--base-transition);
+		}
+		&:before {
+			height: 3px;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			background-color: var(--tbnav-border);
+		}
+		&:after {
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 5px 4px 0 4px;
+			border-color: var(--tbnav-border) transparent transparent transparent;
+			bottom: -5px;
+			left: 50%;
+			margin-left: -2px;
+		}
+
+		&.is-active {
+			&:before,
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+}

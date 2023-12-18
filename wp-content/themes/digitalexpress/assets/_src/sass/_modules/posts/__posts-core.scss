@@ -1,0 +1,104 @@
+/**
+ ####################
+ #   Module POSTS:
+ ####################
+ */
+
+.l-posts {
+	.c-block {
+		&__media {
+			border-radius: var(--l-post-img-radius);
+			overflow: hidden;
+			.c-image {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				left: 0;
+				top: 0;
+				overflow: hidden;
+			}
+			.c-image__src,
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			&-link {
+				display: block;
+				width: 100%;
+				aspect-ratio: var(--l-post-img-ratio);
+
+				@media (hover: hover) {
+					&:hover {
+						.c-image__src, img {
+							transform: scale(1.1);
+						}
+					}
+				}
+
+				&:focus-within {
+					outline: 2px solid var(--outline-color);
+					outline: 5px auto -webkit-focus-ring-color;
+					outline-offset: -2px;
+					border-radius: var(--l-post-img-radius);
+					.c-image {
+						z-index: -1;
+					}
+				}
+			}
+
+		}
+		&__body {
+			padding: var(--l-post-padding-v) var(--l-post-padding-h);
+		}
+		&__title {
+			font-size: var(--l-post-title-size);
+			font-weight: var(--l-post-title-weight);
+			text-transform: var(--l-post-title-transform);
+			margin-bottom: var(--h4-margin-bottom, .5em);
+			color: var(--l-post-title-color);
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: var(--l-post-title-clamp);
+			overflow: hidden;
+			a {
+				color: inherit;
+				&:hover {
+					color: var(--btn-link-color-hover);
+				}
+			}
+		}
+		&__description {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: var(--l-post-text-clamp);
+			overflow: hidden;
+			font-size: var(--l-post-text-size);
+		}
+
+		&__date {
+			margin-bottom: .5em;
+			font-size: var(--l-post-date-size);
+		}
+
+		&__tag,
+		&__pretitle {
+			font-size: var(--l-post-tag-size);
+			font-weight: var(--l-post-tag-weight);
+			text-transform: var(--l-post-tag-transform);
+			color: var(--l-post-tag-color);
+			&:not(:last-child) {
+				padding-right: 1em;
+			}
+			&:hover {
+				color: var(--btn-link-color-hover);
+			}
+		}
+
+		@include media('<=tablet') {
+			margin-bottom: var(--l-post-gap);
+		}
+
+	}
+}
+

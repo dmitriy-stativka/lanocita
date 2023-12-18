@@ -1,0 +1,19 @@
+/**
+ ####################
+ #   Module COUNTERS: Layouts
+ ####################
+ */
+
+.l-counter {
+
+	width: 100%;
+
+	@include media('>tablet') {
+		display: grid;
+		grid-template: auto/repeat(var(--l-block-col, 4), minmax(0, 1fr));
+		row-gap: var(--l-block-gap-vertical);
+		column-gap: var(--l-block-gap-horizontal);
+		padding: var(--l-block-gap-vertical) var(--l-block-gap-horizontal);
+	}
+
+}

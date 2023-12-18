@@ -1,0 +1,50 @@
+/**
+ #################
+ #   Module FORMS: Layouts
+ #################
+ */
+
+.m-form {
+
+	.l-form {
+		@include media("<=desktop") {
+			&__col {
+				margin-bottom: 2em;
+			}
+			&__form {
+				margin: 0 auto;
+			}
+		}
+		@include media(">desktop") {
+			display: flex;
+			justify-content: space-between;
+			gap: var(--form-col-gap);
+
+			&:not(.is-vertical) {
+				.l-form__content {
+					flex: 0 0 var(--columns-ratio);
+				}
+
+				.l-form__form {
+					flex: 1 1 auto;
+				}
+
+				&.order-reverse {
+					flex-direction: row-reverse;
+				}
+			}
+
+			&.is-vertical {
+				flex-direction: column;
+
+				&.order-reverse {
+					flex-direction: column-reverse;
+				}
+			}
+		}
+	}
+
+	.l-form__form {
+		max-width: var(--form-max-width, 550px);
+	}
+}

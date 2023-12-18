@@ -1,0 +1,211 @@
+/** Buttons Core Component */
+
+.btn {
+    --btn-ico-color: currentColor;
+    --icon-shift: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    backface-visibility: hidden;
+    background-color: transparent;
+    position: relative;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    white-space: nowrap;
+    transition: transform var(--base-transition), border var(--base-transition), background var(--base-transition);
+}
+
+.c-btn {
+    @extend .btn;
+
+    padding: 0;
+    font-size: var(--btn-font-size, 1.8rem);
+    font-family: var(--btn-font-family);
+    text-transform: var(--btn-text-transform, none);
+    font-weight: var(--button-font-weight, 400);
+    box-shadow: var(--btn-box-shadow, none);
+    border-radius: var(--btn-border-radius, 0);
+
+    &:not(:only-child) {
+        margin: 2px; // Buffer between multiple buttons
+    }
+
+    > span {
+        box-sizing: border-box;
+    }
+
+    &__txt {
+        position: relative;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        padding: var(--btn-padding-top-bottom, 10px) var(--btn-padding-left-right, 20px);
+        transition: transform .3s, color .3s;
+    }
+
+    /* Button Visual Variants */
+
+    &.-primary,
+    &.-inverted,
+    &.-secondary {
+        .c-btn__ico {
+            padding-inline: calc(var(--btn-padding-left-right, 20px) / 2);
+        }
+        &.icon-left {
+            .c-btn__ico {
+                margin-right: calc(var(--btn-padding-left-right, 20px) * -1);
+            }
+        }
+        &.icon-right {
+            .c-btn__ico {
+                margin-left: calc(var(--btn-padding-left-right, 20px) * -1);
+            }
+        }
+
+        &.is-oblique {
+            --skew-angle: 20deg;
+            transform: skew(calc(var(--skew-angle) * -1));
+            .c-btn__txt,
+            .c-btn__ico .icon {
+                transform: skew(var(--skew-angle));
+            }
+        }
+    }
+
+    &.-primary {
+        background-color: var(--btn-primary-bg);
+        color: var(--btn-primary-color);
+        border: var(--btn-primary-border) solid var(--btn-primary-border-color);
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--btn-primary-bg-hover);
+                color: var(--btn-primary-color-hover);
+                border-color: var(--btn-primary-border-color-hover)
+            }
+        }
+    }
+
+    &.-inverted {
+        background-color: var(--btn-primary-color);
+        color: var(--btn-primary-bg);
+        border: var(--btn-primary-border) solid var(--btn-primary-border-color);
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--btn-primary-color-hover);
+                color: var(--btn-primary-bg-hover);
+                border-color: var(--btn-primary-border-color)
+            }
+        }
+    }
+
+    &.-secondary {
+        background-color: var(--btn-secondary-bg);
+        color: var(--btn-secondary-color);
+        border: var(--btn-secondary-border) solid var(--btn-secondary-border-color);
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--btn-secondary-bg-hover);
+                color: var(--btn-secondary-color-hover);
+                border-color: var(--btn-secondary-border-color-hover)
+            }
+        }
+    }
+
+    &.-link {
+        color: var(--btn-link-color);
+
+        box-shadow: none !important;
+        padding: 0;
+        .c-btn__txt {
+            padding: 0;
+        }
+        .c-btn__ico {
+            max-width: 35px;
+            svg {
+                color: var(--link-icon-color, currentColor);
+            }
+            svg, img, picture {
+                max-height: 1em;
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                color: var(--btn-link-color-hover);
+            }
+        }
+
+        &.icon-left {
+            .c-btn__ico {
+                margin-right: 10px;
+            }
+        }
+        &.icon-right {
+            .c-btn__ico {
+                margin-left: 10px;
+            }
+        }
+    }
+
+
+    /* Button Icon */
+
+    &__ico {
+        min-width: 20px;
+        max-width: 80px;
+        position: relative;
+        transition: transform var(--base-transition), filter var(--base-transition), opacity var(--base-transition);
+        pointer-events: none;
+        display: flex;
+
+        svg, img, picture {
+            margin: auto;
+            max-height: 2ch;
+        }
+
+        svg {
+            fill: var(--btn-ico-color);
+            color: var(--btn-ico-color);
+        }
+
+        img, picture {
+            transition: transform var(--base-transition), filter var(--base-transition), opacity var(--base-transition);
+            max-width: 100%;
+        }
+    }
+
+    &.icon-left {
+        flex-direction: row-reverse;
+    }
+
+    .icon-reversed {
+        transform: scaleX(-1);
+    }
+
+    .c-block__btn & {
+        vertical-align: middle;
+    }
+
+    @media (hover: hover) {
+
+        &:hover {
+            .c-btn__ico {
+                transform: translateX(5px);
+
+                &.icon-reversed {
+                    transform: translateX(-5px) scaleX(-1);
+                }
+            }
+        }
+    }
+
+}
+
+.submitting .wpcf7-submit {
+    pointer-events: none;
+    opacity: .7;
+}

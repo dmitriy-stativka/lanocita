@@ -1,0 +1,51 @@
+/**
+ * Woocommerce: Shipping methods
+ */
+
+@if $--wc-components__shipping-methods == ON {
+  .woocommerce-cart {
+    --wc-checkbox-size: 2rem;
+  }
+
+  .woocommerce-shipping-methods {
+    list-style: none outside;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      margin-bottom: var(--wc-label-margin-bottom, 0.5em);
+
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0;
+        color: var(--primary-text-color);
+        font-size: var(--wc-table-td-fs, var(--label-font-size));
+        font-family: var(--base-text-font);
+        line-height: 1.2;
+        font-weight: var(--base-text-font-weight);
+        position: relative;
+        white-space: pre;
+      }
+    }
+  }
+
+  .woocommerce-shipping-destination {
+    margin: 0 0 10px;
+  }
+
+  .woocommerce-shipping-calculator {
+    .shipping-calculator-form {
+      margin-top: 5px;
+
+      .button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

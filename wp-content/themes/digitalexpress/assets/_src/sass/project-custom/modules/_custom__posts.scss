@@ -1,0 +1,21 @@
+/* Blog post card */
+.l-posts {
+	--l-post-col: 3;
+	--l-post-gap: 20px;
+	--l-post-img-radius: 20px;
+	--l-post-img-ratio: 4 / 3;
+	--l-post-title-size: #{"clamp(var(--h4-font-size-mobile), var(--h-clamp-formula), var(--h4-font-size))"};
+	--l-post-title-weight: var(--h4-font-weight);
+	--l-post-title-transform: var(--h4-text-transform);
+	--l-post-title-color: var(--main-title-color);
+	--l-post-title-clamp: 2;
+	--l-post-padding-h: 0;
+	--l-post-padding-v: 15px;
+	--l-post-date-size: 14px;
+	--l-post-text-size: 1.6rem;
+	--l-post-text-clamp: 3;
+	--l-post-tag-size: 14px;
+	--l-post-tag-color: #666;
+	--l-post-tag-transform: uppercase;
+	--l-post-tag-weight: 600;
+}

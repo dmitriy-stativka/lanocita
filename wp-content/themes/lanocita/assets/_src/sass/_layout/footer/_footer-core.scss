@@ -1,0 +1,95 @@
+.l-footer {
+    background-color: var(--footer-background-color);
+    border-top: var(--footer-top-border-size) solid var(--footer-top-border);
+    color: var(--footer-color);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0px); // fix for iOS devices
+
+    background-repeat: no-repeat;
+    background-position: var(--footer-background-image-position);
+    background-size: var(--footer-background-image-size);
+    background-image: var(--footer-background-image);
+
+    overflow: hidden;
+    position: relative;
+
+    a {
+        color: var(--footer-links-color);
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @include media("<=desktop") {
+            text-decoration: underline;
+        }
+    }
+
+    @include media("<=tablet") {
+        text-align: center;
+    }
+
+    .social-list {
+        gap: var(--footer-link-gap_h, 1vw);
+    }
+}
+
+/* Footer Top Row */
+
+.footer-top {
+    padding-block: var(--footer-top-padding, 20px) var(--footer-bottom-padding, 20px);
+    font-size: var(--footer-top-font-size);
+
+    &__col {
+        @include media("<=tablet") {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &__menus {
+        @include media(">desktop") {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+/* Footer Bottom Row */
+
+.footer-bottom {
+    padding-block: var(--footer-bottom-padding, 10px);
+    font-size: var(--footer-bottom-font-size);
+    background-color: var(--footer-background-color-bottom);
+    &__inner {
+        @include media(">tablet") {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+/* Small components */
+
+.footer-title {
+    font-weight: var(--footer-title-weight);
+    font-size: var(--footer-title-size);
+}
+
+.footer-logo {
+    @include media("<=desktop") {
+        min-height: 25px;
+        max-height: 80px;
+    }
+    height: var(--footer-logo-height);
+    width: var(--footer-logo-width);
+}
+
+.footer-map {
+    iframe, image, picture {
+        max-width: 100%;
+        @include media("<=desktop") {
+            max-height: 250px;
+        }
+    }
+}

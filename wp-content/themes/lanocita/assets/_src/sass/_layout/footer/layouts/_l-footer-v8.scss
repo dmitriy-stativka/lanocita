@@ -1,0 +1,29 @@
+.l-footer-v8 {
+
+	.footer-top__inner,
+	.footer-bottom__inner {
+		@include media(">tablet") {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+	.footer-top__inner {
+		align-items: flex-end;
+	}
+
+	.footer-top {
+		.footer-nav {
+			@include media(">tablet") {
+				justify-content: center;
+			}
+		}
+	}
+
+	.social-list {
+		@include media(">tablet") {
+			justify-content: flex-end;
+		}
+	}
+
+}

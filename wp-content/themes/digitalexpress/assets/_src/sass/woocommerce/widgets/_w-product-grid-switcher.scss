@@ -1,0 +1,55 @@
+/**
+ * WooCommerce: Widget Product Sorting and Toggle
+ */
+
+@if $--wc-widgets__product-grid-switcher == ON {
+  .woocommerce-view-toggle {
+    padding: 5px 10px;
+    flex-shrink: 0;
+    z-index: 1;
+    text-align: right;
+    margin-left: 2rem;
+
+    @include media('>desktop') {
+      padding: 15px 0;
+    }
+
+    @include media('<=desktop') {
+      width: auto;
+      order: 2;
+    }
+
+    button {
+      padding: 8px;
+      outline: none;
+      border: 0;
+      background: transparent;
+      transition: all .3s ease;
+
+      &:hover {
+        transform: scale(0.95);
+        transition: all .3s ease;
+      }
+
+      @include media('>desktop') {
+        padding: 10px;
+      }
+
+      svg {
+        height: 18.5px;
+        width: 18.5px;
+        display: block;
+
+        @include media('>desktop') {
+          height: 25px;
+          width: 25px;
+        }
+      }
+
+      &.is-active {
+        background: #fff;
+        box-shadow: 0 5px 20px rgba(48, 48, 48, 0.15);
+      }
+    }
+  }
+}

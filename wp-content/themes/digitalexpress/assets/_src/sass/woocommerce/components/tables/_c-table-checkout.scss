@@ -1,0 +1,65 @@
+/**
+ * Woocommerce: Table Checkout
+ */
+.woocommerce {
+
+}
+
+table.woocommerce-checkout-review-order-table {
+  @if $--wc-checkout-table-border == ON {
+    @include table-border;
+  }
+
+  thead, tbody, tfoot {
+    tr {
+      th, td {
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  thead {
+    tr:first-child {
+      th, td {
+        padding-top: 0;
+      }
+    }
+  }
+
+  tfoot {
+    tr:last-child {
+      th, td {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+
+  }
+
+  th {
+    padding: var(--wc-table-th-padding);
+
+    &:last-child {
+      text-align: right;
+      padding-right: 0;
+    }
+  }
+
+  td {
+    padding: var(--wc-table-td-padding);
+
+    &:last-child {
+      text-align: right;
+      padding-right: 0;
+    }
+  }
+}
+
+.woocommerce-additional-fields {
+  textarea {
+    height: 125px;
+    resize: none;
+  }
+}

@@ -1,0 +1,38 @@
+/* Banners */
+
+.m-banner {
+	--banner-height--small: 300px;
+	--banner-height--medium: 650px;
+	--banner-height--blog: 400px;
+	--banner-height--full: 100vh;
+
+	.l-gt-d {
+		--v-gap-top: 5%;
+	}
+	.l-gb-d {
+		--v-gap-bot: 5%;
+	}
+
+	&__container {
+		@include media('<=desktop') {
+			min-height: 30vh;
+		}
+	}
+	&__inner {
+
+	}
+	&__media {
+
+	}
+}
+
+
+
+.l-banner {
+	&__media {
+
+	}
+	&__text {
+
+	}
+}

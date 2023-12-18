@@ -1,0 +1,1 @@
+<svg width="0" height="0" style="position:absolute"><symbol viewBox="0 0 25.809 20.49" id="arrow-orange-right" xmlns="http://www.w3.org/2000/svg"><path data-name="Path 3341" d="M0 5.703h15.564v-5.7l10.244 10.244-10.244 10.246v-6.117H0z" fill="#e55b2b"/></symbol></svg>

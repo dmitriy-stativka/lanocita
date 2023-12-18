@@ -1,0 +1,36 @@
+/* Heading Layout */
+
+.l-heading {
+	@include media('<=tablet') {
+		text-align: center;
+	}
+}
+
+.l-heading-v2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	.c-heading {
+		margin-bottom: 0;
+		@include media('<=desktop') {
+			text-align: left;
+		}
+	}
+
+}
+
+.l-content-simple-1 {
+	.m-block__container {
+		max-width: calc(var(--content-width) + var(--page-gutter, 20px) * 2);
+	}
+	.l-heading {
+		@include media('>desktop') {
+			max-width: var(--l-container-width, 100%);
+		}
+
+		&.text-center {
+			margin-inline: auto;
+		}
+	}
+}

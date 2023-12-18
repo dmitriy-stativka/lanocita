@@ -1,0 +1,21 @@
+/**
+ * Woocommerce: Settings
+ */
+
+:root {
+  --wc-vertical-space: 3vmin;
+  --wc-acc-nav-height: 50px;
+
+  // Offsets
+  --wc-top-offset: calc(var(--navbar-height, 60px) + var(--wc-notice-height, 0px));
+  --wc-top-offset-admin: calc(var(--wc-top-offset) + var(--admin-bar));
+  --wc-top-offset-account: calc(var(--navbar-height, 60px) + var(--wc-notice-height, 0px) + var(--wc-acc-nav-height));
+
+  @include media('>desktop') {
+    --wc-vertical-space: 5vmin;
+    --wc-top-offset: calc(var(--navbar-height, 60px) + var(--wc-notice-height, 0px) + var(--wc-vertical-space));
+  }
+
+  @include media('>desktop-l') {
+  }
+}

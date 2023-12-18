@@ -1,0 +1,41 @@
+/**
+ * Woocommerce: General
+ */
+
+body {
+  &.woocommerce,
+  &.woocommerce-page {
+    overflow-x: hidden;
+
+    main.site-content {
+      width: 100%;
+      max-width: calc(var(--content-width) + var(--page-gutter, 20px) * 2);
+      padding: var(--wc-top-offset, 0) var(--page-gutter) var(--wc-vertical-space) var(--page-gutter);
+      margin-right: auto;
+      margin-left: auto;
+
+      .admin-bar & {
+        padding-top: var(--wc-top-offset-admin);
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0;
+
+        .c-heading {
+
+        }
+      }
+
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+    }
+  }
+
+  // Offset when we have account navigation
+  &.woocommerce-account {
+    --wc-top-offset: calc(var(--wc-top-offset-account) - 50px);
+  }
+}

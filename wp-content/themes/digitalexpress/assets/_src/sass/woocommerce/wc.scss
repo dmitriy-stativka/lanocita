@@ -1,0 +1,82 @@
+/**
+ * Woocommerce: SCSS imports
+ */
+
+/* Woocommerce Feature Switchers (must use) */
+@import 'woo-custom/_custom__wc-config'; // CONFIG
+
+/* Core imports */
+@import '../__core/core-mixins'; // Fetch for core mixins
+@import '../__helpers/util-classes'; // Fetch for util classes
+
+/* Core */
+@import 'core/settings'; // Core: Settings
+@import 'core/mixins'; // Core: Mixins
+@import 'core/keyframes'; // Core: Animations
+@import 'core/general'; // Core: General
+@import 'core/buttons'; // Core: Buttons
+@import 'core/typography'; // Core: Typography
+@import 'core/headings'; // Core: Headings
+
+@import '../project-custom/custom__btns'; // Fetch core custom styling for buttons
+
+@import 'layout/layout'; // Layout: General
+@import 'layout/header'; // Layout: Header
+
+/* Tables */
+@import 'components/tables/_c-tables'; // Tables: General
+@import 'components/tables/c-table-cart'; // Table: Cart product list
+@import 'components/tables/c-table-cart-totals'; // Table: Cart totals
+@import 'components/tables/c-table-checkout'; // Table: Checkout and payments
+@import 'components/tables/c-table-thank-you'; // Table: Thank you page
+@import 'components/tables/c-table-account-orders'; // Table: Account orders
+@import 'components/tables/c-table-account-wishlist'; // Table: Account whishlist
+
+/* Components */
+@import 'components/forms/_f-forms'; // Component: Forms / NOTE: Imports inside file
+@import 'components/c-overlays'; // Component: Overlays
+@import 'components/c-pagination'; // Component: Shop pagination
+@import 'components/c-breadcrumbs'; // Component: Single product breadcrumbs
+@import 'components/c-notification-box'; // Component: Woocommerce notifications
+@import 'components/c-addresses'; // Component: Addresses
+@import 'components/c-socials'; // Component: Single product page social icons
+@import 'components/c-product-gallery'; // Component: Single product page gallery
+@import 'components/c-coupon-box'; // Component: Coupon box on single product page and Cart page
+@import 'components/c-shipping-methods'; // Component: Shipping methods
+
+/* Tabs for Single product page */
+@import 'components/tabs/_c-tabs'; // Tabs: General
+@import 'components/tabs/c-tab-description'; // Tab: Product description
+@import 'components/tabs/c-tab-specification'; // Tab: Product specification
+@import 'components/tabs/c-tab-ingredients'; // Tab: Product Ingredients
+@import 'components/tabs/c-tab-reviews'; // Tab: Product Reviews
+@import 'components/tabs/c-tab-faq'; // Tab: Product Faq
+
+/* Widgets */
+@import 'widgets/w-product-sorting'; // Shop: Product sorting
+@import 'widgets/w-product-grid-switcher'; // Shop: Grid switcher
+@import 'widgets/w-sidebar-widgets'; // Shop: Sidebar widgets
+
+/* Pages */
+@import 'pages/page-shop'; // Page: Shop
+@import 'pages/page-login'; // Page: Login
+@import 'pages/page-account'; // Page: Account / NOTE: Imports inside file
+@import 'pages/page-cart'; // Page: Cart / NOTE: Im orts inside file
+@import 'pages/page-checkout'; // Page: Checkout / NOTE: Imports inside file
+@import 'pages/page-search'; // Page: Search
+@import 'pages/page-single-product'; // Page: Single product page
+@import 'pages/page-thank-you'; // Page: Thank you page
+@import 'pages/page-order-pay'; // Page: Order pay page
+
+/* Plugins */
+@import 'plugins/p-quick-buy'; // Plugin: Quick buy
+@import 'plugins/p-b-rocket-filters'; // Plugin: B-Rocket Filters
+@import 'plugins/p-variation-swatches'; // Plugin: Variation swatches
+@import 'plugins/p-subscription'; // Plugin: Subscriptions
+@import 'plugins/p-wishlist'; // Plugin: Wish list
+@import 'plugins/p-waitlist'; // Plugin: Wait list
+
+/* Project specific */
+@import 'woo-custom/_custom__wc-core'; // Custom Core
+@import 'woo-custom/_custom__wc-settings'; // Custom Settings
+

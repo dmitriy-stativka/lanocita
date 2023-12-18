@@ -1,0 +1,33 @@
+/* Wrapper decorations */
+.m-wrapper {
+	.c-decor {
+		pointer-events: none;
+		position: absolute;
+
+		@include media("<=tablet") {
+			display: none;
+		}
+	}
+
+	.--d-right {
+		right: 0;
+	}
+
+	.--d-left {
+		left: 0;
+	}
+
+	.--d-center {
+		top: 50%
+	}
+}
+
+
+.scroll-down {
+	position: absolute;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding-top: 15px;
+	z-index: 3;
+}

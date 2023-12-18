@@ -1,0 +1,35 @@
+.m-slider {
+	--swiper-outer-gap: 80px;
+	--swiper-arrows-bg: #fff;
+	--swiper-arrows-color: var(--primary-color1);
+	--swiper-arrows-shadow: 0 12px 14px rgba(33, 33, 33, 0.1), 0 4px 4px rgba(33, 33, 33, 0.1);
+
+	--swiper-pagination-bullet-horizontal-gap: 10px;
+	--swiper-pagination-bullet-size: 24px;
+	--swiper-pagination-bullet-border: #ccc;
+	--swiper-pagination-bullet-inactive-color: #fff;
+	--swiper-pagination-bullet-border-active: var(--primary-color1);
+	--swiper-pagination-color: var(--primary-color1);
+	--swiper-pagination-bullet-inactive-opacity: .8;
+	--swiper-pagination-radius: 20px;
+
+	--swiper-navigation-size: 52px;
+	--thumbs-size: 65px;
+	--thumb-border-width: 2px;
+	--thumb-border-color: #fff;
+	--thumb-border-color-active: var(--primary-color1);
+
+	@include media('<=desktop') {
+		--swiper-navigation-size: 35px;
+		--swiper-outer-gap: 40px;
+		--thumbs-size: 30px;
+	}
+
+	.swiper-pagination-progressbar {
+		max-width: 65%;
+		@include media('>desktop') {
+			max-width: 82%;
+		}
+	}
+
+}

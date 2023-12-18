@@ -1,0 +1,13 @@
+body.page-template-template-simple-text,
+body.single-post,
+body.error404,
+body.search {
+	.site-header__main {
+		//background-color: var(--header-mini-bg, var(--primary-color1));
+	}
+	.site-content {
+		@include media(">desktop") {
+			padding-top: var(--navbar-height, 60px);
+		}
+	}
+}

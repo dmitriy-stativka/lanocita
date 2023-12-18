@@ -1,0 +1,11 @@
+/**
+ * WooCommerce: Cross sells widget on cart
+ */
+
+@if $--wc-widgets__cross-sells == ON {
+  .cross-sells {
+    > h2 {
+      @extend .h2;
+    }
+  }
+}

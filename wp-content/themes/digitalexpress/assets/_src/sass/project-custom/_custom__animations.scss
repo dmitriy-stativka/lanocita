@@ -1,0 +1,18 @@
+/* Intersection Observer custom animations */
+
+// Custom animation example
+// Set the class in module Effect settings
+[data-viewport-effect^='custom-animation'][data-viewport-effect^='custom-animation'] {
+    > * {
+        .gridder-list {
+            @include transitionOpacityFrom($from: 0, $delay: .3);
+        }
+    }
+
+    &.in-view {
+        .gridder-list {
+            @include transitionOpacityTo($to: 1, $delay: .3);
+            @include increment-delay($type: transition, $offset: .18s);
+        }
+    }
+}

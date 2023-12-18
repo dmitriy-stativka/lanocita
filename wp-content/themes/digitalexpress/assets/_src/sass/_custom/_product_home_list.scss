@@ -1,0 +1,41 @@
+.product_home{
+    &_list{
+        .list-item{
+            display: flex;
+            flex-wrap: wrap;
+
+            @media (max-width: 767px) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    &_item{
+        flex-basis: 50%;
+        position: relative;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .c-btn{
+            position: absolute;
+            left: 40px;
+            bottom: 25px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 20px;
+
+            @media (max-width: 767px) {
+                left: 15px;
+                font-size: 14px;
+            }
+        }
+
+        &.-large{
+            flex-basis: 100%;
+        }
+    }
+}

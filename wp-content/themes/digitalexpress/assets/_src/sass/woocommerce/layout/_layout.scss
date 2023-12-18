@@ -1,0 +1,20 @@
+/**
+ * Woocommerce: Default page layout styles
+ */
+
+.woocommerce,
+.woocommerce-cart,
+.woocommerce-checkout {
+  --wc-layout-row-gap: 40px;
+  --wc-layout-col-gap: 50px;
+  --wc-layout-left: 100%;
+  --wc-layout-right: 100%;
+
+  @include media('>desktop') {
+    --wc-layout-row-gap: 4rem;
+    --wc-layout-col-gap: 10rem;
+    --wc-layout-left: 65%;
+    --wc-layout-right: 35%;
+  }
+}
+

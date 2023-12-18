@@ -1,0 +1,59 @@
+/**
+ ################
+ #   Module TEAMS
+ ################
+ */
+
+
+// Core Structure
+
+.l-team {
+	overflow: hidden;
+	position: relative;
+	z-index: 10;
+
+	&__list {
+		gap: var(--grid-col-gap);
+
+		@include media('>tablet') {
+			display: grid;
+			grid-template: auto/repeat(var(--grid-col), minmax(0, 1fr));
+			gap: var(--grid-col-gap);
+		}
+		.l-team__item {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	&__item {
+		cursor: pointer;
+		.c-block__media {
+			overflow: hidden;
+
+			.c-image {
+				position: absolute;
+				inset: 0;
+			}
+			img {
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+.c-team {
+	&__preview-socials {
+		.social-list {
+			.text-center & {
+				justify-content: center;
+			}
+		}
+	}
+	&__preview-name {
+		color: var(--team-grid-name-color);
+		font-size: var(--team-grid-name-size);
+		font-weight: var(--team-grid-name-weight);
+		margin: 0;
+	}
+}

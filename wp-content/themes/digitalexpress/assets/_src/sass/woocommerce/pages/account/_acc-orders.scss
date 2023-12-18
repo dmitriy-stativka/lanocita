@@ -1,0 +1,54 @@
+/**
+ * Woocommerce: Account Orders page
+ */
+
+.woocommerce {
+  --wc-acc-order-gap: 10rem;
+}
+
+.woocommerce-MyAccount {
+  &-orders {
+    .woocommerce-orders-table {
+      &__cell-order-actions {
+        text-align: right;
+      }
+    }
+  }
+
+  &-content {
+    .woocommerce-order-details {
+      table.woocommerce-table {
+        @include table-border;
+
+        td {
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    .woocommerce-customer-details {
+      .woocommerce-columns {
+        margin-bottom: var(--wc-vertical-space);
+        display: flex;
+        justify-content: space-between;
+        flex: 0 0 100%;
+        gap: var(--wc-acc-order-gap);
+
+        .woocommerce-column--1,
+        .woocommerce-column--2 {
+          width: 100%;
+          @include media('>desktop') {
+            width: 50%;
+          }
+        }
+
+        .woocommerce-column--2 {
+
+        }
+      }
+    }
+  }
+}
+

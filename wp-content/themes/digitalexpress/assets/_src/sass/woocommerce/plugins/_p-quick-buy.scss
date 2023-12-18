@@ -1,0 +1,44 @@
+/**
+ * WooCommerce: Plugin Variation Swatches
+ */
+
+@if $--wc-plugins__quick-buy == ON {
+  :root {
+    --wc-product-quantity-width: 100px;
+    --wc-product-quantity-height: 50px;
+    --wc-variations-reset-color: var(--primary-link-color);
+    --wc-variations-reset-color-hover: var(--primary-color2);
+
+    @include media('>phone-l') {
+      --wc-product-quantity-width: 125px;
+    }
+  }
+
+  .entry-summary {
+    .single_add_to_cart_button,
+    .single-add-to-cart-button {
+      border-radius: 50px;
+      margin: 0;
+      display: block;
+      height: var(--wc-product-quantity-height);
+
+      &:hover {
+      }
+    }
+
+    .single-add-to-cart-button {
+      background: transparent;
+
+      &:hover {
+      }
+    }
+
+    .single_add_to_cart_button {
+      margin-bottom: 10px;
+    }
+  }
+
+  body.quick-view-active {
+    overflow: hidden;
+  }
+}

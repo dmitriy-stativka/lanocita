@@ -1,0 +1,74 @@
+/* Accordions */
+
+@import "accordions-layouts/accordion-list-v2";
+
+.m-accordion {
+	--columns-ratio: 50%;
+	--columns-gap: 5%;
+	--c-block-gl: 0px;
+	--c-block-gr: 0px;
+	--c-block-gt: 0px;
+	--c-block-gb: 0px;
+	--c-block-border-color: transparent;
+	--c-block-title-bg-color: transparent;
+	--c-block-text-bg-color: transparent;
+	--c-block-title-color: currentColor;
+	--c-block-text-color: currentColor;
+	--acc-item-space: .1em;
+}
+
+.c-accordion {
+	--acc-icon-width: 60px;
+	--acc-title-size: inherit;
+	--acc-title-weight: inherit;
+
+	&__title {
+
+		/* Accordion Arrow */
+
+		.icons-plus-minus &,
+		.icons-arrows & {
+			padding-right: 40px;
+
+			&:after {
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 40px;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				color: currentColor;
+				transition: all .3s;
+			}
+		}
+
+		.icons-plus-minus & {
+			&:after {
+				content: '+';
+			}
+		}
+		.icons-arrows & {
+			&:after {
+				content: '\25bc';
+			}
+		}
+	}
+}
+
+.icons-plus-minus {
+	.is-active {
+		.c-accordion__title:after {
+			content: '–';
+		}
+	}
+}
+.icons-arrows {
+	.is-active {
+		.c-accordion__title:after {
+			transform: rotate(180deg);
+		}
+	}
+}

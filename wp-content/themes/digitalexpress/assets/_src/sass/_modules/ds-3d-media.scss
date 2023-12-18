@@ -1,0 +1,16 @@
+/**
+ #####################################
+ #   MODULE: 3D MEDIA / Image Spinner
+ #####################################
+ */
+
+@import '../__core/core-mixins';
+
+@import "3d-media/3d-media-core.scss";
+// Layouts
+@import "3d-media/layouts/layout-3d-media-core";
+// Components
+@import "3d-media/spinner-components/controls.scss";
+@import "3d-media/spinner-components/hotspots.scss";
+
+@import "../project-custom/modules/custom__3d-spinner";

@@ -1,0 +1,42 @@
+/**
+ * Woocommerce: Keyframes/animations
+ */
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes pulse-dark-translate {
+  0% {
+    transform: translateY(-50%) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(#CCDDEB, 0.7);
+  }
+
+  70% {
+    transform: translateY(-50%) scale(1);
+    box-shadow: 0 0 0 10px rgba(#CCDDEB, 0);
+  }
+
+  100% {
+    transform: translateY(-50%) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(#CCDDEB, 0);
+  }
+}

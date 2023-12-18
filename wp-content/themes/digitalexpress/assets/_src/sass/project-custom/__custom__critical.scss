@@ -1,0 +1,15 @@
+/**
+ * Critical CSS: Imported in Critical.css
+ * You should put here everything content related to the first section/header rendering.
+ * Keep it minimal.
+ *
+ * For testing comment/remove everything from main.scss (wp-content/themes/digitalexpress/assets/_src/sass/main.scss).
+ * Nothing should fall apart in the first section of the website.
+ *
+ * If the website is not using Woocommerce, don't forget to set up '$--wc-active' flag to 'OFF'.
+ */
+
+@import "custom__header";
+@import "custom__btns";
+@import "modules/custom__banner";
+@import "modules/custom__heading";

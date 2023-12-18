@@ -1,0 +1,207 @@
+.site-header {
+	--dropdown-bg: #fff;
+	--dropdown-color: var(--primary-color1);
+	--dropdown-color-active: var(--primary-color2);
+	--dropdown-font-size: 16px;
+	--dropdown-font-weight: 600;
+	--dropdown-padding: 25px 20px;
+	--dropdown-width: 300px;
+	--dropdown-offset: 30px;
+
+	--toggle-submenu-btn-width: 40px;
+}
+
+.nav-main {
+	.sub-menu {
+		text-align: left;
+
+		@include media('>desktop') {
+			position: absolute;
+			opacity: 0;
+			pointer-events: none;
+			top: calc(100% + var(--dropdown-offset));
+			transform: translate(-50%, -10px);
+			left: 50%;
+			padding: var(--dropdown-padding);
+			min-width: var(--dropdown-width);
+			z-index: 10;
+			background-color: var(--dropdown-bg);
+			box-shadow: 0 4px 34px rgba(0, 7, 63, 0.1);
+			border-radius: 10px;
+			transition: opacity .3s, transform .3s;
+
+			a {
+				color: var(--dropdown-color);
+				display: flex;
+				width: 100%;
+				align-items: center;
+				font-weight: var(--dropdown-font-weight);
+				font-size: var(--dropdown-font-size);
+
+				&:hover {
+					color: var(--dropdown-color-active)
+				}
+			}
+
+			.current-menu-item a {
+				color: var(--dropdown-color-active)
+			}
+
+			.menu-item-content {
+				min-width: 250px;
+			}
+
+			.menu-item-title {
+				display: block;
+				margin-bottom: 5px;
+			}
+
+			.menu-item-caption {
+				font-weight: 400;
+				color: var(--primary-color1);
+			}
+
+			.menu-item-img-wrapper {
+				margin-right: 10px;
+				min-width: 30px;
+				max-width: 150px;
+
+				img, svg {
+					max-width: 100%;
+					height: auto;
+				}
+			}
+
+			.menu-item {
+				&:not(:last-child) {
+					margin-bottom: 2px;
+				}
+
+				a {
+					padding: 5px;
+					transition: all .3s;
+				}
+			}
+
+			&:before {
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 10px 10px 10px;
+				border-color: transparent transparent var(--dropdown-bg) transparent;
+				position: absolute;
+				top: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				height: var(--dropdown-offset);
+				width: 100%;
+				left: 0;
+				bottom: calc(100%);
+				z-index: -1;
+			}
+
+			.sub-menu {
+				top: 0;
+				left: 100%;
+				transform: none !important;
+
+				&::before {
+					border-width: 10px 10px 10px 0;
+					border-color: transparent var(--dropdown-bg) transparent transparent;
+					right: 100%;
+					top: unset;
+					left: unset;
+					transform: none;
+				}
+			}
+		}
+
+		@include media('<=desktop') {
+			.menu-item-img-wrapper,
+			.menu-item-caption {
+				display: none;
+			}
+		}
+	}
+
+	/* Sub menu toggle */
+	.menu-item-has-children {
+		position: relative;
+
+		> a,
+		> .plain-menu-item {
+			padding-right: var(--toggle-submenu-btn-width);
+		}
+
+		&:hover, &:focus, &:focus-within {
+			@include media('>desktop') {
+				> .sub-menu-toggle,
+				> .plain-menu-item {
+					&:before {
+						transform: translate(-50%, -50%) rotate(315deg);
+					}
+				}
+				> .sub-menu {
+					opacity: 1;
+					pointer-events: auto;
+					transform: translate(-50%, 0);
+				}
+			}
+		}
+
+		.sub-menu-toggle,
+		.plain-menu-item {
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -70%) rotate(135deg);
+				border-top: 3px solid var(--link-color);
+				border-right: 3px solid var(--link-color);
+				width: 10px;
+				height: 10px;
+				transition: transform 0.36s ease-in-out;
+				@include media('>desktop') {
+					border-top: 3px solid currentColor;
+					border-right: 3px solid currentColor;
+				}
+			}
+
+			&.is-toggled {
+				&:before {
+					transform: translate(-50%, -50%) rotate(315deg);
+				}
+			}
+		}
+
+		.sub-menu-toggle {
+			position: absolute;
+			top: 25px;
+			right: 0;
+			transform: translateY(-50%);
+			width: var(--toggle-submenu-btn-width);
+			height: 100%;
+			@include media('>desktop') {
+				top: 50%;
+			}
+		}
+
+		.plain-menu-item {
+			position: relative;
+
+			&:before {
+				right: -25px;
+				left: unset;
+			}
+		}
+	}
+
+	/* End sub menu toggle */
+}

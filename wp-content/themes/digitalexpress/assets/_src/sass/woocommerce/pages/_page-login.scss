@@ -1,0 +1,74 @@
+/**
+ * Woocommerce: Account Pages
+ * TODO: Refactor this...WIP
+ */
+
+.woocommerce {
+  --wc-login-row-gap: var(--wc-layout-row-gap);
+  --wc-login-col-gap: var(--wc-layout-col-gap);
+  --wc-login-left: var(--wc-layout-left);
+  --wc-login-right: var(--wc-layout-right);
+
+  @include media('>desktop') {
+    --wc-login-left: 50%;
+    --wc-login-right: 50%;
+  }
+}
+
+.woocommerce-login {
+  div.woocommerce {
+    flex-direction: column;
+  }
+}
+
+// Login / Register pages
+#customer_login {
+  display: flex;
+  gap: var(--wc-login-row-gap);
+  justify-content: space-between;
+  flex-direction: column;
+  margin: auto;
+  max-width: calc(var(--content-width) + var(--page-gutter, 20px) * 2);
+
+  @include media('>desktop') {
+    gap: var(--wc-login-col-gap);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  > .col-1 {
+    flex: 0 0 calc(var(--wc-login-left) - var(--wc-login-gap) / 2);
+    max-width: calc(var(--wc-login-left) - var(--wc-login-gap) / 2);
+    width: 100%;
+  }
+
+  > .col-2 {
+    flex: 0 0 calc(var(--wc-login-left) - var(--wc-login-gap) / 2);
+    max-width: calc(var(--wc-login-left) - var(--wc-login-gap) / 2);
+  }
+
+  a {
+    color: var(--primary-link-color);
+    font-weight: var(--button-font-weight);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--wc-link-hover, var(--primary-color2));
+      }
+    }
+  }
+
+  .button {
+    min-width: 200px;
+  }
+
+  .woocommerce-form-login__rememberme {
+    margin-bottom: var(--wc-vertical-space);
+  }
+}
+
+.woocommerce-privacy-policy-link {
+  color: var(--btn-link-color);
+}

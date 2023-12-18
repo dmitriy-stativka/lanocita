@@ -1,0 +1,29 @@
+@import 'header/header_simple';
+@import 'header/header-mobile';
+@import 'header/header-dropdown';
+@import 'header/burger-desktop';
+
+.site-header {
+    --content-width: var(--desktop-width-xl); // Container with for header wider than page containers
+    --navbar-gap_v: 10px;
+    --navbar-gap_h: 1vw;
+    --navbar-link-height: 30px;
+    --header-link-color: var(--main-header-color);
+    --header-link-color-hover: var(--primary-color2);
+    --header-logo-width: 100%;
+    --header-logo-height: 40px;
+    --main-header-gap-between-items: 2vw;
+}
+
+.site-search {
+    --search-size: 30px;
+    --search-btn-bg: transparent;
+    --search-btn-radius: 4px;
+    --search-height: 30px;
+    --search-width: 250px;
+    --search-radius: 4px;
+    --search-outer-bg: var(--primary-color2);
+    --search-outer-gap: 5px;
+    --search-outer-border: transparent;
+    --search-btn-color: var(--primary-color2);
+}

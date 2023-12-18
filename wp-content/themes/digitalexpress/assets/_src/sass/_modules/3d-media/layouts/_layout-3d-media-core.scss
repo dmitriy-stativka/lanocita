@@ -1,0 +1,25 @@
+.image-spinner {
+    flex-shrink: 0;
+    flex-grow: 1;
+    &__wrap {
+        margin-top: var(--vertical-gap);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--vertical-gap);
+    }
+}
+
+.l-image-spinner {
+    //    &.has-toc {
+    .image-spinner__wrap {
+        @include media('>desktop') {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+    .hotspots-content {
+        flex: 0 0 30%;
+    }
+    //    }
+}

@@ -1,0 +1,26 @@
+.image-spinner {
+    position: relative;
+    &__bttn {
+        border: none;
+        padding: 0;
+        background: none;
+        color: var(--primary-color2);
+        cursor: pointer;
+        svg {
+            display: block;
+            width: 5rem;
+            height: 5rem;
+        }
+        &:active,
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            color: currentColor;
+        }
+    }
+    .spritespin-stage,
+    .js-image-spinner {
+        overflow: visible !important;
+    }
+}

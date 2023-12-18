@@ -1,0 +1,19 @@
+/**
+ * WooCommerce: Mobile header shift for e-commerce icons
+ */
+
+@include media('<=desktop') {
+  .woocommerce,
+  .woocommerce-js,
+  .woocommerce-account,
+  .woocommerce-page {
+    .site-header__logo {
+      margin-left: calc(var(--burger-width) * 2);
+    }
+
+    .nav-main__btn {
+      left: 15px;
+      right: unset;
+    }
+  }
+}
